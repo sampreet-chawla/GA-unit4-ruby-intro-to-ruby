@@ -221,7 +221,7 @@ One neat thing that comes out of this is the ability to do
 *string interpolation*, inserting variables directly into the middle of a
 string.
 
-In Ruby, because Ruby doesn't implicitly convert numbers to strings, so all those
+Ruby doesn't implicitly convert numbers to strings, so all those
 string conversions need to be done manually using `.to_s`.
 
 ```ruby
