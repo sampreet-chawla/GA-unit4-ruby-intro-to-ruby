@@ -374,10 +374,10 @@ the numbers from 1 up to `max_num`, which is a variable to which you can assign
  for numbers divisible by 5, it should print "buzz"; for numbers divisible by
  both 3 **and** five, it should print "fizzbuzz".
 
-To run your code, simply type navigate to the root of this repository and run
+To run your code, simply navigate to the root of this repository and run
 `ruby lib/fizzbuzz.rb`
 
-> This should seem familiar, since it's exactly what we were doing with `node`
+> Running a script in this way should seem familiar, since it's exactly what we were doing with `node`
 > in Unit 1. It's a deliberate similarity - Node was modeled off of other
 > console-based runtime environments, as a way of giving JavaScript a solid
 > platform for running on the server side.
