@@ -432,6 +432,11 @@ read from (and even write to) your program. Once there, try calling your
 `fizzbuzz` method with the following arguments : 10, 15, 30, 50. Does your
 code work like you'd expect?
 
+You can also verify your code is working by running
+```
+bundle exec rspec spec/fizzbuzz_method_spec.rb
+```
+
 ## Ruby :: Collections
 
 ### Arrays
@@ -480,6 +485,11 @@ the `"fizz"` array, numbers divisible by 5 *only* should go into the ``"buzz"``
  once you're done, return the hash as the result of `fizzbuzz`.
 
 Run your code from the console using `ruby`, and check your work using `pry`.
+
+This time, you can verify your code is working by running
+```
+bundle exec rspec spec/fizzbuzz_hash_method_spec.rb
+```
 
 ## Common Gotchas When Learning Ruby After JavaScript
 
