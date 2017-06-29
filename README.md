@@ -470,7 +470,7 @@ hashes do not allow you to access their keys through a dot notation; you
 
 ### Lab: FizzBuzz with Hashes
 
-In pairs, edit your fizzbuzz code, adding a hash containing keys `"fizz"`,
+In pairs, use your current fizzbuzz code to help you create a new method called `fizzbuzz_hash`. In this method, create a hash containing keys `"fizz"`,
 `"buzz"`, `"fizzbuzz"`, and `"other"`, each with arrays as values. As you
 iterate through all the numbers from 1 to `max_num`, add each number to one
 of the arrays mentioned above; numbers divisible by 3 *only* should go into
