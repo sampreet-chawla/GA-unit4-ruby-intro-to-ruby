@@ -14,7 +14,7 @@ goal of utilizing the foundation we've already built.
 
 "Polyglot" is a term used to refer to someone who can use two or more
 programming languages. By learning two languages, we increase your understanding
-of basic programming concepts, as well as give you an edge in job the market.
+of basic programming concepts, as well as give you an edge in the job market.
 
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
@@ -23,8 +23,8 @@ as reading material, but as a handy place to define and experiment with the basi
 
 ## Prerequisites
 
--   [ga-wdi-boston/js-basics](https://github.com/ga-wdi-boston/js-basics)
--   [ga-wdi-boston/js-reference-types](https://github.com/ga-wdi-boston/js-reference-types)
+-   [ga-wdi-boston/js](https://git.generalassemb.ly/ga-wdi-boston/js)
+-   [ga-wdi-boston/js-reference-types](https://git.generalassemb.ly/ga-wdi-boston/js-reference-types)
 
 ## Objectives
 
@@ -40,7 +40,7 @@ By the end of this, developers should be able to:
 ## Preparation
 
 1.  Fork and clone this repository.
- [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+ [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
 1.  Create a new branch, `training`, for your work.
 1.  Checkout to the `training` branch.
 1.  Install dependencies with `bundle install`.
@@ -65,8 +65,8 @@ In order to accomplish our learning objectives, we've got quite a number of Ruby
 
 ## Foreword
 
-The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.2.0/) and
-[Standard Library](http://ruby-doc.org/stdlib-2.2.0/) are so extensive that
+The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.4.1/) and
+[Standard Library](http://ruby-doc.org/stdlib-2.4.1/) are so extensive that
 we'll always want to check them before building something ourselves.  The
 official Ruby docs are our friends, and we should use them liberally.  Over
 time, we'll learn to remember the more common methods, but even then it can be
@@ -199,7 +199,7 @@ prompts.
 To see all the methods that strings have in Ruby, open up `pry`, type a string followed by
 a '.', and hit tab; alternatively, you can call `"some string".methods.sort`
 for a full list. And, of course, the Ruby documentation has
-[a full list](https://ruby-doc.org/core-2.3.0/String.html) as well.
+[a full list](https://ruby-doc.org/core-2.4.1/String.html) as well.
 
 Strings objects come with several conversion methods that all start `to_` and
 then a letter or abbreviation hinting at what conversion they perform.
@@ -221,7 +221,7 @@ One neat thing that comes out of this is the ability to do
 *string interpolation*, inserting variables directly into the middle of a
 string.
 
-In Ruby, because Ruby doesn't implicitly convert numbers to strings, so all those
+Ruby doesn't implicitly convert numbers to strings, so all those
 string conversions need to be done manually using `.to_s`.
 
 ```ruby
@@ -327,7 +327,8 @@ Similarly to `if`, a `while` loop also looks almost the same in Ruby as it does
  in JavaScript.
 
 ```ruby
-while i < 10 do |i|
+i = 3
+while i < 10 do
   i += 1
 end
 ```
@@ -338,7 +339,7 @@ The `do ... end`
  blocks soon.
 
 `for` loops in Ruby exist, but are not commonly used. Instead, we use the
-[upto](http://ruby-doc.org/core-2.3.0/Integer.html#method-i-upto) enumerator.
+[upto](http://ruby-doc.org/core-2.4.1/Integer.html#method-i-upto) enumerator.
 We'll learn more about enumerators soon.
 
 ```ruby
@@ -373,10 +374,10 @@ the numbers from 1 up to `max_num`, which is a variable to which you can assign
  for numbers divisible by 5, it should print "buzz"; for numbers divisible by
  both 3 **and** five, it should print "fizzbuzz".
 
-To run your code, simply type navigate to the root of this repository and run
+To run your code, simply navigate to the root of this repository and run
 `ruby lib/fizzbuzz.rb`
 
-> This should seem familiar, since it's exactly what we were doing with `node`
+> Running a script in this way should seem familiar, since it's exactly what we were doing with `node`
 > in Unit 1. It's a deliberate similarity - Node was modeled off of other
 > console-based runtime environments, as a way of giving JavaScript a solid
 > platform for running on the server side.
@@ -431,6 +432,11 @@ read from (and even write to) your program. Once there, try calling your
 `fizzbuzz` method with the following arguments : 10, 15, 30, 50. Does your
 code work like you'd expect?
 
+You can also verify your code is working by running
+```
+bundle exec rspec spec/fizzbuzz_method_spec.rb
+```
+
 ## Ruby :: Collections
 
 ### Arrays
@@ -469,7 +475,7 @@ hashes do not allow you to access their keys through a dot notation; you
 
 ### Lab: FizzBuzz with Hashes
 
-In pairs, edit your fizzbuzz code, adding a hash containing keys `"fizz"`,
+In pairs, use your current fizzbuzz code to help you create a new method called `fizzbuzz_hash`. In this method, create a hash containing keys `"fizz"`,
 `"buzz"`, `"fizzbuzz"`, and `"other"`, each with arrays as values. As you
 iterate through all the numbers from 1 to `max_num`, add each number to one
 of the arrays mentioned above; numbers divisible by 3 *only* should go into
@@ -479,6 +485,11 @@ the `"fizz"` array, numbers divisible by 5 *only* should go into the ``"buzz"``
  once you're done, return the hash as the result of `fizzbuzz`.
 
 Run your code from the console using `ruby`, and check your work using `pry`.
+
+This time, you can verify your code is working by running
+```
+bundle exec rspec spec/fizzbuzz_hash_method_spec.rb
+```
 
 ## Common Gotchas When Learning Ruby After JavaScript
 
