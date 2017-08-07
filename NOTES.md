@@ -6,15 +6,15 @@ What is ruby?
 
 
 ### Hello world
-we already have Ruby installed
-current version? 2.4. You are likely on 2.3.1 and that’s fine
-how to manage versions? Rbenv (or maybe rvm)
+- we already have Ruby installed from installfest
+[current version of ruby](https://www.ruby-lang.org/en/downloads/releases/)
+- How to manage versions? Rbenv (or maybe rvm)
 
-It's a scripting language, executes from top to bottom, suitable for small scripts and large applications.
+- It's a scripting language, similar to javascript executes from top to bottom, suitable for small scripts and large applications.
 
-what are the conventions of the language? As we go through the talk, we’ll note the conventions we notice in ruby.
-how to use it? REPL, write ruby file, execute similar to node...
-(good opportunity to write first script, puts "hello world!", and execute it...)
+- What are the conventions of the language? As we go through the talk, we’ll note the conventions we notice in ruby.
+how to use it? REPL, write ruby file, execute file similar to node...
+(good opportunity to write first script, puts "hello world!", and execute it from command line)
 
 
 ### REPL
