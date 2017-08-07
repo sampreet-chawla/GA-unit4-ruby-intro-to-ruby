@@ -1,0 +1,42 @@
+## Framing
+What is ruby? 
+- it’s a cross-platform, open source, interpreted object oriented language, suitable for scripting and full-scale applications. 
+- Designed by Matz in the mid 90s, it really increased in popularity when DHH released Rails in 2004.
+- It has been designed on the principle of least surprise. Designed "to be productive, and to enjoy programming, and to be happy."
+
+
+### Hello world
+we already have Ruby installed
+current version? 2.4. You are likely on 2.3.1 and that’s fine
+how to manage versions? Rbenv (or maybe rvm)
+
+It's a scripting language, executes from top to bottom, suitable for small scripts and large applications.
+
+what are the conventions of the language? As we go through the talk, we’ll note the conventions we notice in ruby.
+how to use it? REPL, write ruby file, execute similar to node...
+(good opportunity to write first script, puts "hello world!", and execute it...)
+
+
+### REPL
+How do we access the REPL in JS?
+in Ruby —> Pry
+Pry is also a debugger and is a critical tool to know about
+how did we debug JS?
+with ruby, we say `binding.pry` in our code
+(how do you exit? ‘exit’. How do you continue? `continue`.)
+
+### Methods
+- What is a method? It’s a function. There are two types: instance methods (defined on an object, or in ruby an instance of a class) and class method (defined on the class itself, similar to defining methods on the prototype in Javascript). 
+- We will get into this more when we talk about inheritance in ruby
+
+- Methods return something, but unlike most JS functions, ruby returns implicitly. 
+- The value of the last expression is what is returned. Return keyword also exists. Same as JS? Try it out! [Gist of combining `upto()` and various flavors of `return`](https://gist.github.com/danman01/ba59c826fd54b3084102939497138a66)
+
+### Ruby conventions
+You already know the basics of programming since we started with javascript. When going to a new language like ruby, think about how do you “speak” ruby? write code like a rubyist?
+
+- parens are optional, as are semicolons. You can use them but…who decides? The community has general guidelines. 
+- The more you look at other people’s code, the more ruby conventions you will pick up. 
+- Reading the style guide can explain how something is generally done by the community: https://github.com/bbatsov/ruby-style-guide
+
+- We use rubocop to catch bad style too. bin/rake will run rubocop.
