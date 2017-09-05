@@ -113,7 +113,7 @@ used *very* infrequently in Ruby.
 
 ### Variable Declaration
 
-Ruby handles variables differently than we've seen in previously. In Ruby,
+Ruby handles variables differently than we've previously seen. In Ruby,
 variables can be simply defined, **without previously being declared.** This
 means that with Ruby, we don't need keywords like `let` and `const` before variables.
 We can simply declare the variable and assign it a value `variable = value`.
