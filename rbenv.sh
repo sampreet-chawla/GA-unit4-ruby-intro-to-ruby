@@ -8,13 +8,12 @@ if which rvm; then
 fi
 
 #brew install rbenv
-if uname -s != 'Darwin'; then
+if [[ $(uname -s) != 'Darwin' ]]; then
   sudo apt-get install libffi-dev
 fi
 
 brew install rbenv
 
-#add to .bashrc
 cat <<'EOF' >> ~/.bashrc
 
 # Rbenv
@@ -24,7 +23,7 @@ fi
 
 EOF
 
-source ~/.bashrc
+eval "$(rbenv init -)"
 
 rbenv rehash
 
@@ -34,12 +33,11 @@ else
   brew install ruby-build
 fi
 
-if [[ $(rbenv --version) != 'rbenv 1.1.0' ]]; then
+if [[ $(rbenv --version) != 'rbenv 1.1.1' ]]; then
   echo -e "\n There may have been an issue installing rbenv. Please ask consultant for assistance. \n"
 fi
 
-#TODO prompt for destructive action
-echo bundler > $(rbenv root)/default-gems
+echo bundler >> $(rbenv root)/default-gems
 
 rbenv install 2.4.1
 rbenv global 2.4.1
