@@ -374,6 +374,30 @@ the numbers from 1 up to `max_num`, which is a variable to which you can assign
  for numbers divisible by 5, it should print "buzz"; for numbers divisible by
  both 3 **and** five, it should print "fizzbuzz".
 
+ For example:
+ ```rb
+ max_num = 16
+
+ ## what should print to the console
+ 
+ 1
+ 2
+ Fizz
+ 4
+ Buzz
+ Fizz
+ 7
+ 8
+ Fizz
+ Buzz
+ 11
+ Fizz
+ 13
+ 14
+ FizzBuzz
+ 16
+ ```
+
 To run your code, simply navigate to the root of this repository and run
 `ruby lib/fizzbuzz.rb`
 
