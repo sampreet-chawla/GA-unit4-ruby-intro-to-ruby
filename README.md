@@ -534,6 +534,8 @@ will help with this as well.
 
 -   **[Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)**
 -   **[why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)**
+-   **[Variable References and Mutability of Ruby Objects]https://launchschool.com/blog/references-and-mutability-in-ruby**
+-   **[Object Passing in Ruby - Pass by Reference or Pass by Value]https://launchschool.com/blog/object-passing-in-ruby**
 
 ## [License](LICENSE)
 
