@@ -379,7 +379,7 @@ the numbers from 1 up to `max_num`, which is a variable to which you can assign
  max_num = 16
 
  ## what should print to the console
- 
+
  1
  2
  Fizz
@@ -558,8 +558,9 @@ will help with this as well.
 
 -   **[Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)**
 -   **[why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)**
--   **[Variable References and Mutability of Ruby Objects]https://launchschool.com/blog/references-and-mutability-in-ruby**
--   **[Object Passing in Ruby - Pass by Reference or Pass by Value]https://launchschool.com/blog/object-passing-in-ruby**
+-   **[Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)**
+-   **[Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)**
+-   **[Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)**
 
 ## [License](LICENSE)
 
