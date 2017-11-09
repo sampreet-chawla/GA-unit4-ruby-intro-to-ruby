@@ -329,7 +329,7 @@ Similarly to `if`, a `while` loop also looks almost the same in Ruby as it does
 ```ruby
 i = 3
 while i < 10 do
-  i += 1
+  puts i += 1
 end
 ```
 
@@ -373,6 +373,30 @@ the numbers from 1 up to `max_num`, which is a variable to which you can assign
  3, instead of printing the number, your program should print the word "fizz";
  for numbers divisible by 5, it should print "buzz"; for numbers divisible by
  both 3 **and** five, it should print "fizzbuzz".
+
+ For example:
+ ```rb
+ max_num = 16
+
+ ## what should print to the console
+
+ 1
+ 2
+ Fizz
+ 4
+ Buzz
+ Fizz
+ 7
+ 8
+ Fizz
+ Buzz
+ 11
+ Fizz
+ 13
+ 14
+ FizzBuzz
+ 16
+ ```
 
 To run your code, simply navigate to the root of this repository and run
 `ruby lib/fizzbuzz.rb`
@@ -534,6 +558,9 @@ will help with this as well.
 
 -   **[Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)**
 -   **[why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)**
+-   **[Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)**
+-   **[Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)**
+-   **[Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)**
 
 ## [License](LICENSE)
 
