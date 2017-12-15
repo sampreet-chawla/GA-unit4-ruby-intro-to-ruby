@@ -561,6 +561,7 @@ will help with this as well.
 -   **[Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)**
 -   **[Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)**
 -   **[Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)**
+-   **[What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)**
 
 ## [License](LICENSE)
 
