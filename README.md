@@ -34,7 +34,7 @@ By the end of this, developers should be able to:
 -   Identify basic language features and types in Ruby.
 -   Write a fizzbuzz script in Ruby.
 -   List and use common operators in Ruby.
--   Identify operators in an expression and explain what it does.
+-   Identify operators in an expression and explain what they do.
 -   List all 6 Ruby object types and give an example of each.
 
 ## Preparation
@@ -146,7 +146,7 @@ and they work in (mostly) similar ways.
 
 In Ruby, everything is an expression - a statement composed of a combination
  of operands (data) and operations. In JavaScript, things like `+` and `-` are
- *true operators* - keywords built into the language itself, and embued with
+ *true operators* - keywords built into the language itself, and imbued with
  fixed, unchangeable meanings. In Ruby, in contrast, most "operators" you
  encounter are actually method calls on some object; the main exceptions
  are assignment operators (e.g. `=`), logical operators
