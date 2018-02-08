@@ -75,6 +75,7 @@ extremely useful to consult the documentation.
 ## Pry
 
 ```sh
+gem install bundler
 gem install pry
 pry
 ```
