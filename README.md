@@ -75,6 +75,7 @@ extremely useful to consult the documentation.
 ## Pry
 
 ```sh
+gem install bundler
 gem install pry
 pry
 ```
@@ -562,6 +563,7 @@ will help with this as well.
 -   **[Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)**
 -   **[Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)**
 -   **[What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)**
+-   **[Ruby Koans](http://rubykoans.com/)**
 
 ## [License](LICENSE)
 
