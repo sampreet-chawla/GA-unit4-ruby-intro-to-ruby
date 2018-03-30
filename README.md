@@ -35,7 +35,6 @@ By the end of this, developers should be able to:
 -   Write a fizzbuzz script in Ruby.
 -   List and use common operators in Ruby.
 -   Identify operators in an expression and explain what they do.
--   List all 6 Ruby object types and give an example of each.
 
 ## Preparation
 
