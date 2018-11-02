@@ -64,8 +64,8 @@ In order to accomplish our learning objectives, we've got quite a number of Ruby
 
 ## Foreword
 
-The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.4.1/) and
-[Standard Library](http://ruby-doc.org/stdlib-2.4.1/) are so extensive that
+The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.5.0/) and
+[Standard Library](http://ruby-doc.org/stdlib-2.5.0/) are so extensive that
 we'll always want to check them before building something ourselves.  The
 official Ruby docs are our friends, and we should use them liberally.  Over
 time, we'll learn to remember the more common methods, but even then it can be
@@ -201,7 +201,7 @@ prompts.
 To see all the methods that strings have in Ruby, open up `pry`, type a string followed by
 a '.', and hit tab; alternatively, you can call `"some string".methods.sort`
 for a full list. And, of course, the Ruby documentation has
-[a full list](https://ruby-doc.org/core-2.4.1/String.html) as well.
+[a full list](https://ruby-doc.org/core-2.5.0/String.html) as well.
 
 Strings objects come with several conversion methods that all start `to_` and
 then a letter or abbreviation hinting at what conversion they perform.
@@ -341,7 +341,7 @@ The `do ... end`
  blocks soon.
 
 `for` loops in Ruby exist, but are not commonly used. Instead, we use the
-[upto](http://ruby-doc.org/core-2.4.1/Integer.html#method-i-upto) enumerator.
+[upto](http://ruby-doc.org/core-2.5.0/Integer.html#method-i-upto) enumerator.
 We'll learn more about enumerators soon.
 
 ```ruby
