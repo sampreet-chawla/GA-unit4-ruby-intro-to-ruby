@@ -158,13 +158,17 @@ Ruby doesn't have an increment operator, either pre (`++i`) or post (`i++`).
 Use `+=` instead.
 
 ```ruby
-[4] pry(main)> counter += 1
+pry(main)> counter = 0
+=> 0
+
+pry(main)> counter += 1
 => 1
-[5] pry(main)> counter += 1
+
+pry(main)> counter += 1
 => 2
-[6] pry(main)> counter
+
+pry(main)> counter
 => 2
-[7] pry(main)>
 ```
 
 `counter += 1` is really just Ruby making you type fewer characters to
