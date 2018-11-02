@@ -175,9 +175,7 @@ pry(main)> counter
 accomplish `counter = counter + 1`. This is commonly referred to as
 'syntactic sugar' - when a programming language has syntax that's deliberately
 designed to make code shorter/more semantic/easier to write. Ruby has a *ton*
-of syntactic sugar. JavaScript allows us to use this shorthand too; however,
-Ruby takes things a step further, providing this 'syntactic sugar' for a
-variety of operators, including `*`, `-`, and even `||`.
+of syntactic sugar. [JavaScript allows us to use this shorthand for assignment too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators). Just like with JavaScript and other languages, you can combine assignment with many different operators like `*`, `-`, and even `||`.
 
 ```ruby
 [1] pry(main)> counter ||= 0          # counter = counter || 0
