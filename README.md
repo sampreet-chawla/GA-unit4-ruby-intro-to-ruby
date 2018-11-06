@@ -64,8 +64,8 @@ In order to accomplish our learning objectives, we've got quite a number of Ruby
 
 ## Foreword
 
-The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.4.1/) and
-[Standard Library](http://ruby-doc.org/stdlib-2.4.1/) are so extensive that
+The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.5.0/) and
+[Standard Library](http://ruby-doc.org/stdlib-2.5.0/) are so extensive that
 we'll always want to check them before building something ourselves.  The
 official Ruby docs are our friends, and we should use them liberally.  Over
 time, we'll learn to remember the more common methods, but even then it can be
@@ -158,22 +158,24 @@ Ruby doesn't have an increment operator, either pre (`++i`) or post (`i++`).
 Use `+=` instead.
 
 ```ruby
-[4] pry(main)> counter += 1
+pry(main)> counter = 0
+=> 0
+
+pry(main)> counter += 1
 => 1
-[5] pry(main)> counter += 1
+
+pry(main)> counter += 1
 => 2
-[6] pry(main)> counter
+
+pry(main)> counter
 => 2
-[7] pry(main)>
 ```
 
 `counter += 1` is really just Ruby making you type fewer characters to
 accomplish `counter = counter + 1`. This is commonly referred to as
 'syntactic sugar' - when a programming language has syntax that's deliberately
 designed to make code shorter/more semantic/easier to write. Ruby has a *ton*
-of syntactic sugar. JavaScript allows us to use this shorthand too; however,
-Ruby takes things a step further, providing this 'syntactic sugar' for a
-variety of operators, including `*`, `-`, and even `||`.
+of syntactic sugar. [JavaScript allows us to use this shorthand for assignment too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators). Just like with JavaScript and other languages, you can combine assignment with many different operators like `*`, `-`, and even `||`.
 
 ```ruby
 [1] pry(main)> counter ||= 0          # counter = counter || 0
@@ -199,7 +201,7 @@ prompts.
 To see all the methods that strings have in Ruby, open up `pry`, type a string followed by
 a '.', and hit tab; alternatively, you can call `"some string".methods.sort`
 for a full list. And, of course, the Ruby documentation has
-[a full list](https://ruby-doc.org/core-2.4.1/String.html) as well.
+[a full list](https://ruby-doc.org/core-2.5.0/String.html) as well.
 
 Strings objects come with several conversion methods that all start `to_` and
 then a letter or abbreviation hinting at what conversion they perform.
@@ -339,7 +341,7 @@ The `do ... end`
  blocks soon.
 
 `for` loops in Ruby exist, but are not commonly used. Instead, we use the
-[upto](http://ruby-doc.org/core-2.4.1/Integer.html#method-i-upto) enumerator.
+[upto](http://ruby-doc.org/core-2.5.0/Integer.html#method-i-upto) enumerator.
 We'll learn more about enumerators soon.
 
 ```ruby
