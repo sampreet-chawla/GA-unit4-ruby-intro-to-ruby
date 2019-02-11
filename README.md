@@ -533,6 +533,19 @@ However, there are a couple of important differences. For instance, Ruby
 hashes do not allow you to access their keys through a dot notation; you
 *must* use square braces.
 
+We can also define an object with keys and values already in it:
+
+```ruby
+nums = {
+  "odds"  => [1, 3, 5],
+  "evens" => [2, 4, 6]
+}
+```
+
+In the example above, our hash has the keys `"odds"` and `"evens"` in quotes,
+which map to values `[1, 3, 5]` and `[2, 4, 6]` respectively. We use the
+hash rocket symbol here to link our keys to their values. 
+
 ### Lab: FizzBuzz with Hashes
 
 In pairs, use your current fizzbuzz code to help you create a new method called
