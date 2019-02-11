@@ -19,48 +19,50 @@ of basic programming concepts, as well as give you an edge in the job market.
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
 you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
-as reading material, but as a handy place to define and experiment with the basics of Ruby.
+as reading material, but as a handy place to define and experiment with the basics of
+Ruby.
 
 ## Prerequisites
 
--   [ga-wdi-boston/js](https://git.generalassemb.ly/ga-wdi-boston/js)
--   [ga-wdi-boston/js-reference-types](https://git.generalassemb.ly/ga-wdi-boston/js-reference-types)
+- [ga-wdi-boston/js](https://git.generalassemb.ly/ga-wdi-boston/js)
+- [ga-wdi-boston/js-reference-types](https://git.generalassemb.ly/ga-wdi-boston/js-reference-types)
 
 ## Objectives
 
 By the end of this, developers should be able to:
 
--   Run Ruby code using Ruby REPL and interpreter.
--   Identify basic language features and types in Ruby.
--   Write a fizzbuzz script in Ruby.
--   List and use common operators in Ruby.
--   Identify operators in an expression and explain what they do.
+- Run Ruby code using Ruby REPL and interpreter.
+- Identify basic language features and types in Ruby.
+- Write a fizzbuzz script in Ruby.
+- List and use common operators in Ruby.
+- Identify operators in an expression and explain what they do.
 
 ## Preparation
 
-1.  Fork and clone this repository.
+1. Fork and clone this repository.
  [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
-1.  Create a new branch, `training`, for your work.
-1.  Checkout to the `training` branch.
-1.  Install dependencies with `bundle install`.
+1. Create a new branch, `training`, for your work.
+1. Checkout to the `training` branch.
+1. Install dependencies with `bundle install`.
 
 ## Outline
 
-In order to accomplish our learning objectives, we've got quite a number of Ruby features to cover. These include:
+In order to accomplish our learning objectives, we've got quite a number of Ruby
+features to cover. These include:
 
--   Running scripts from the command line.
--   Evaluating code interactively in a REPL.
--   Variable declaration and naming conventions.
--   Strings, interpolation, and concatenation.
--   Methods and functions, including predicates.
--   Fixnums, Floats, and Numbers.
--   Falsiness.
--   Flow control.
--   Loops, ranges, and enumerable iteration.
--   Implicit and explicit returns.
--   Expression evaluation and conditional assignment.
--   Type coercion.
--   Logic, shortcut evaluation, and operator precedence.
+- Running scripts from the command line.
+- Evaluating code interactively in a REPL.
+- Variable declaration and naming conventions.
+- Strings, interpolation, and concatenation.
+- Methods and functions, including predicates.
+- Fixnums, Floats, and Numbers.
+- Falsiness.
+- Flow control.
+- Loops, ranges, and enumerable iteration.
+- Implicit and explicit returns.
+- Expression evaluation and conditional assignment.
+- Type coercion.
+- Logic, shortcut evaluation, and operator precedence.
 
 ## Foreword
 
@@ -79,7 +81,10 @@ gem install pry
 pry
 ```
 
-**[Pry](http://pryrepl.org/)** is a console-based **[REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)** for working with Ruby. Simply type in an expression into Pry, and it returns the result (preceded by `=> `, also known as a 'hash rocket').
+**[Pry](http://pryrepl.org/)** is a console-based
+**[REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)** for
+working with Ruby. Simply type in an expression into Pry, and it returns the result
+(preceded by `=> `, also known as a 'hash rocket').
 
 ```ruby
 [1] pry(main)> 1 + 1
@@ -92,13 +97,34 @@ pry
 > code. Though we won't be focusing on that aspect of Pry today, it'll be a
 > critical tool throughout the rest of this unit.
 
+Pry is packaged within a Ruby _gem_, meaning it is a library or module that is
+not a part of the core Ruby library.
+You have to install the [Pry gem](https://rubygems.org/gems/pry/versions/0.11.3)
+to use it. One way is to run the `gem install pry` command from the command line.
+
+However, since we have `pry` listed in our project's `Gemfile`, we only need to do `bundle
+install`, which installs each gem in the Gemfile, including Pry.
+Using [Bundler](https://bundler.io/) and the Gemfile is the preferred way to
+manage and install dependencies for your Ruby projects.
+
+Now that Pry is installed, you can start using it by typing `pry` at the command line:
+
+```sh
+$ pry
+[1] pry(main)>
+```
+
+You can now execute commands. To quit, type `quit` (or `exit` or `ctrl-d`).
+
 Let's use `pry` to explore some of the fundamentals of the Ruby language.
 
 ## Ruby :: Core Syntax, Variables, and Operators
 
 ### Semicolons
 
-We have been writing JavaScript without semicolons; however, when searching the internet for help, you most likely have encountered semicolons in solutions. In Ruby, there is a conspicuous lack of semicolons.
+We have been writing JavaScript without semicolons; however, when searching the
+internet for help, you most likely have encountered semicolons in solutions. In Ruby,
+there is a conspicuous lack of semicolons.
 
 ```ruby
 [1] pry(main)> 1
@@ -107,8 +133,8 @@ We have been writing JavaScript without semicolons; however, when searching the 
 
 The end of a line (almost always) marks the end of an expression; semicolons
 are only required if you have two distinct expressions on one line
-(e.g. `name = "Antony"; height_in_feet = 6`). The most likely place where you might spot
-a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
+(e.g. `name = "Antony"; height_in_feet = 6`). The most likely place where you might
+spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
 used *very* infrequently in Ruby.
 
 ### Variable Declaration
@@ -118,7 +144,6 @@ variables can be simply defined, **without previously being declared.** This
 means that with Ruby, we don't need keywords like `let` and `const` before variables.
 We can simply declare the variable and assign it a value `variable = value`.
 
-
 ```ruby
 [1] pry(main)> a = 1
 => 1
@@ -126,7 +151,7 @@ We can simply declare the variable and assign it a value `variable = value`.
 
 However, this only works if we assign the variable a value. Why? Because
 otherwise, Ruby will default to trying to *evaluate* your variable, and because
- you haven't defined it yet, Ruby will throw an error.
+you haven't defined it yet, Ruby will throw an error.
 
 ```ruby
 [1] pry(main)> counter
@@ -145,12 +170,12 @@ and they work in (mostly) similar ways.
 ### Operators
 
 In Ruby, everything is an expression - a statement composed of a combination
- of operands (data) and operations. In JavaScript, things like `+` and `-` are
- *true operators* - keywords built into the language itself, and imbued with
- fixed, unchangeable meanings. In Ruby, in contrast, most "operators" you
- encounter are actually method calls on some object; the main exceptions
- are assignment operators (e.g. `=`), logical operators
- (e.g. `||`, `&&`, `!`), and control flow operators (e.g. `and`, `or`, `not`).
+of operands (data) and operations. In JavaScript, things like `+` and `-` are
+*true operators* - keywords built into the language itself, and imbued with
+fixed, unchangeable meanings. In Ruby, in contrast, most "operators" you
+encounter are actually method calls on some object; the main exceptions
+are assignment operators (e.g. `=`), logical operators
+(e.g. `||`, `&&`, `!`), and control flow operators (e.g. `and`, `or`, `not`).
 
 #### Brief Aside: Syntactic Sugar
 
@@ -175,7 +200,9 @@ pry(main)> counter
 accomplish `counter = counter + 1`. This is commonly referred to as
 'syntactic sugar' - when a programming language has syntax that's deliberately
 designed to make code shorter/more semantic/easier to write. Ruby has a *ton*
-of syntactic sugar. [JavaScript allows us to use this shorthand for assignment too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators). Just like with JavaScript and other languages, you can combine assignment with many different operators like `*`, `-`, and even `||`.
+of syntactic sugar. [JavaScript allows us to use this shorthand for assignment too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators).
+Just like with JavaScript and other languages, you can combine assignment with many
+different operators like `*`, `-`, and even `||`.
 
 ```ruby
 [1] pry(main)> counter ||= 0          # counter = counter || 0
@@ -198,10 +225,10 @@ prompts.
 
 ## Ruby :: Strings
 
-To see all the methods that strings have in Ruby, open up `pry`, type a string followed by
-a '.', and hit tab; alternatively, you can call `"some string".methods.sort`
-for a full list. And, of course, the Ruby documentation has
-[a full list](https://ruby-doc.org/core-2.5.0/String.html) as well.
+To see all the methods that strings have in Ruby, open up `pry`, type a string
+followed by a '.', and hit tab; alternatively, you can call
+`"some string".methods.sort` for a full list. And, of course, the Ruby documentation
+has [a full list](https://ruby-doc.org/core-2.5.0/String.html) as well.
 
 Strings objects come with several conversion methods that all start `to_` and
 then a letter or abbreviation hinting at what conversion they perform.
@@ -301,10 +328,16 @@ end
 A Ruby `if` looks quite similar to a JavaScript `if`. Some of the major
 differences are:
 
--   In Ruby, we use `elsif`, not `else if`.
--   Conditions don't require parentheses (though they can still accept them).
--   No curly braces required. Simply break up your condition from your code with a newline (as above), a semicolon, or the keyword `then` (e.g. `if .... then `).
--   The end of the `if` is indicated by the keyword `end`. `end` is an extremely common keyword in Ruby, appearing at the end of pretty much any contiguous section of code.
+- In Ruby, we use `elsif`, not `else if`.
+
+- Conditions don't require parentheses (though they can still accept them).
+
+- No curly braces required. Simply break up your condition from your code with a
+  newline (as above), a semicolon, or the keyword `then` (e.g. `if....then`).
+
+- The end of the `if` is indicated by the keyword `end`. `end` is an extremely common
+  keyword in Ruby, appearing at the end of pretty much any contiguous section of
+  code.
 
 `unless` can sometimes be used to replace an `if` with a negated test and no
 `elsif` or `else`.
@@ -326,7 +359,7 @@ end
 ### Loops
 
 Similarly to `if`, a `while` loop also looks almost the same in Ruby as it does
- in JavaScript.
+in JavaScript.
 
 ```ruby
 i = 3
@@ -350,7 +383,6 @@ We'll learn more about enumerators soon.
 end
 ```
 
-
 ### Code Along: `upto`
 
 In our `pry` consoles, let's enter:
@@ -371,42 +403,43 @@ environment. Open up the file [fizzbuzz.rb](lib/fizzbuzz.rb);
 in pairs, you're going to solve "FizzBuzz", a simple programming challenge
 based on a childrens' game. Essentially, your program should print out all of
 the numbers from 1 up to `max_num`, which is a variable to which you can assign
- an arbitrary (positive, integer) value. However, if a number is divisible by
- 3, instead of printing the number, your program should print the word "fizz";
- for numbers divisible by 5, it should print "buzz"; for numbers divisible by
- both 3 **and** five, it should print "fizzbuzz".
+an arbitrary (positive, integer) value. However, if a number is divisible by
+3, instead of printing the number, your program should print the word "fizz";
+for numbers divisible by 5, it should print "buzz"; for numbers divisible by
+both 3 **and** five, it should print "fizzbuzz".
 
- For example:
- ```rb
- max_num = 16
+For example:
 
- ## what should print to the console
+```ruby
+max_num = 16
 
- 1
- 2
- Fizz
- 4
- Buzz
- Fizz
- 7
- 8
- Fizz
- Buzz
- 11
- Fizz
- 13
- 14
- FizzBuzz
- 16
- ```
+## what should print to the console
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+```
 
 To run your code, simply navigate to the root of this repository and run
 `ruby lib/fizzbuzz.rb`
 
-> Running a script in this way should seem familiar, since it's exactly what we were doing with `node`
-> in Unit 1. It's a deliberate similarity - Node was modeled off of other
-> console-based runtime environments, as a way of giving JavaScript a solid
-> platform for running on the server side.
+> Running a script in this way should seem familiar, since it's exactly what we
+> were doing with `node` in Unit 1. It's a deliberate similarity - Node was
+> modeled off of other console-based runtime environments, as a way of giving
+> JavaScript a solid platform for running on the server side.
 
 ## Ruby :: Methods
 
@@ -423,13 +456,13 @@ end
 
 The question mark is conventional for methods that return a boolean.  Another
 common convention in Ruby is a trailing exclamation point, which indicates that
- a method is a 'mutator' - this means that the method changes the object that
- it is called from, rather than returning a new object.
+a method is a 'mutator' - this means that the method changes the object that
+it is called from, rather than returning a new object.
 
 > This behavior is also sometimes referred to as operating 'in place'.
 
-Ruby methods use an *implicit return* - by default, they will return the value of the
-last expression evaluated (which may or may not be a return expression).
+Ruby methods use an *implicit return* - by default, they will return the value
+of the last expression evaluated (which may or may not be a return expression).
 However, Ruby does also have a `return` keyword which, as it does in
 JavaScript, immediately terminates the function/method and sends back a value.
 In the case of the method above, `square?` will return the value of that last
@@ -459,7 +492,8 @@ read from (and even write to) your program. Once there, try calling your
 code work like you'd expect?
 
 You can also verify your code is working by running
-```
+
+```sh
 bundle exec rspec spec/fizzbuzz_method_spec.rb
 ```
 
@@ -483,8 +517,8 @@ square braces.
 
 ### Hashes
 
-A Ruby hash acts somewhat like a dictionary (or object) in JavaScript, in that it consists
-of pairs of keys and values.
+A Ruby hash acts somewhat like a dictionary (or object) in JavaScript, in
+that it consists of pairs of keys and values.
 
 ```ruby
 [1] pry(main)> dict = {}
@@ -499,27 +533,42 @@ However, there are a couple of important differences. For instance, Ruby
 hashes do not allow you to access their keys through a dot notation; you
 *must* use square braces.
 
+We can also define an object with keys and values already in it:
+
+```ruby
+nums = {
+  "odds"  => [1, 3, 5],
+  "evens" => [2, 4, 6]
+}
+```
+
+In the example above, our hash has the keys `"odds"` and `"evens"` in quotes,
+which map to values `[1, 3, 5]` and `[2, 4, 6]` respectively. We use the
+hash rocket symbol here to link our keys to their values.
+
 ### Lab: FizzBuzz with Hashes
 
-In pairs, use your current fizzbuzz code to help you create a new method called `fizzbuzz_hash`. In this method, create a hash containing keys `"fizz"`,
+In pairs, use your current fizzbuzz code to help you create a new method called
+`fizzbuzz_hash`. In this method, create a hash containing keys `"fizz"`,
 `"buzz"`, `"fizzbuzz"`, and `"other"`, each with arrays as values. As you
 iterate through all the numbers from 1 to `max_num`, add each number to one
 of the arrays mentioned above; numbers divisible by 3 *only* should go into
 the `"fizz"` array, numbers divisible by 5 *only* should go into the ``"buzz"``
- array, numbers divisible by both should go into the `"fizzbuzz"` array, and
- numbers divisible by neither should go into the `"other"` array. Finally,
- once you're done, return the hash as the result of `fizzbuzz`.
+array, numbers divisible by both should go into the `"fizzbuzz"` array, and
+numbers divisible by neither should go into the `"other"` array. Finally,
+once you're done, return the hash as the result of `fizzbuzz`.
 
-Run your code from the console using `ruby`, and check your work using `pry`.
+Run your code from the console using `ruby lib/fizzbuzz.rb`.
 
 This time, you can verify your code is working by running
-```
+
+```sh
 bundle exec rspec spec/fizzbuzz_hash_method_spec.rb
 ```
 
 ## Common Gotchas When Learning Ruby After JavaScript
 
--   `==` and `===` mean different things between the two languages. In
+- `==` and `===` mean different things between the two languages. In
 JavaScript, `===` is a 'strict equality' comparator, while `==` is a
 'loose equality' comparator; since `==` has some weird exceptions, the
 convention is to almost always use `===`.
@@ -527,47 +576,47 @@ convention is to almost always use `===`.
 **In Ruby, however, the reverse is true; you should `==` to test for equality,
 and *not* use `===`** (which does something different).
 
--   Use `.equal?` if we *need* to test for identity (two variables that
+- Use `.equal?` if we *need* to test for identity (two variables that
 reference the same object).
 
--   Ruby has several different numeric types (unlike JavaScript),
+- Ruby has several different numeric types (unlike JavaScript),
 but most operations "do what we expect".
 
--   Booleans: Only `false` and `nil` are falsy in Ruby.
+- Booleans: Only `false` and `nil` are falsy in Ruby.
 Everything else is truthy.
 
--   We don't need to use parentheses when invoking a method (as we saw above
-with the `+` method - one exception later).  But sometimes they add clarity,
+- We don't need to use parentheses when invoking a method (as we saw above
+with the `+` method - one exception later). But sometimes they add clarity,
 so it can be beneficial to include them.
 
--   The Ruby comment character is `#`.  Everything following a `#` on a line
+- The Ruby comment character is `#`. Everything following a `#` on a line
 is ignored by the interpreter.
 
--   p, [$stdout.]puts, [$stdout.]print are not directly analogous to
+- p, [$stdout.]puts, [$stdout.]print are not directly analogous to
 console.log but are often used for a similar purpose when writing scripts
 run from the terminal.
 
--   Ruby's convention is to use underscores between words in names (a.k.a.
-'snake_case').  Constants start with a capital letter.
+- Ruby's convention is to use underscores between words in names (a.k.a.
+'snake_case'). Constants start with a capital letter.
 
--   Use Atom tab completion to avoid the common, and hard to find error of
+- Use Atom tab completion to avoid the common, and hard to find error of
 writing `def method_name` and forgetting the closing `end`. Good indentation
 will help with this as well.
 
--   Ruby doesn't implicitly convert numbers to strings.
+- Ruby doesn't implicitly convert numbers to strings.
 
 ## Additional Resources
 
--   [Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)
--   [why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)
--   [Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)
--   [Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)
--   [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
--   [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
--   [Ruby Koans](http://rubykoans.com/)
+- [Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)
+- [why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)
+- [Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)
+- [Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)
+- [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
+- [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
+- [Ruby Koans](http://rubykoans.com/)
 
 ## [License](LICENSE)
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
