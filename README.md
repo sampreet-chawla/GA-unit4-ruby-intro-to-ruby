@@ -97,6 +97,25 @@ working with Ruby. Simply type in an expression into Pry, and it returns the res
 > code. Though we won't be focusing on that aspect of Pry today, it'll be a
 > critical tool throughout the rest of this unit.
 
+Pry is packaged within a Ruby _gem_, meaning it is a library or module that is
+not a part of the core Ruby library.
+You have to install the [Pry gem](https://rubygems.org/gems/pry/versions/0.11.3)
+to use it. One way is to run the `gem install pry` command from the command line.
+
+However, since we have `pry` listed in our project's `Gemfile`, we only need to do `bundle
+install`, which installs each gem in the Gemfile, including Pry.
+Using [Bundler](https://bundler.io/) and the Gemfile is the preferred way to
+manage and install dependencies for your Ruby projects.
+
+Now that Pry is installed, you can start using it by typing `pry` at the command line:
+
+```sh
+$ pry
+[1] pry(main)>
+```
+
+You can now execute commands. To quit, type `quit` (or `exit` or `ctrl-d`).
+
 Let's use `pry` to explore some of the fundamentals of the Ruby language.
 
 ## Ruby :: Core Syntax, Variables, and Operators
@@ -132,7 +151,7 @@ We can simply declare the variable and assign it a value `variable = value`.
 
 However, this only works if we assign the variable a value. Why? Because
 otherwise, Ruby will default to trying to *evaluate* your variable, and because
- you haven't defined it yet, Ruby will throw an error.
+you haven't defined it yet, Ruby will throw an error.
 
 ```ruby
 [1] pry(main)> counter
