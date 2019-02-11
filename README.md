@@ -544,7 +544,7 @@ nums = {
 
 In the example above, our hash has the keys `"odds"` and `"evens"` in quotes,
 which map to values `[1, 3, 5]` and `[2, 4, 6]` respectively. We use the
-hash rocket symbol here to link our keys to their values. 
+hash rocket symbol here to link our keys to their values.
 
 ### Lab: FizzBuzz with Hashes
 
@@ -558,7 +558,7 @@ array, numbers divisible by both should go into the `"fizzbuzz"` array, and
 numbers divisible by neither should go into the `"other"` array. Finally,
 once you're done, return the hash as the result of `fizzbuzz`.
 
-Run your code from the console using `ruby`, and check your work using `pry`.
+Run your code from the console using `ruby lib/fizzbuzz.rb`.
 
 This time, you can verify your code is working by running
 
