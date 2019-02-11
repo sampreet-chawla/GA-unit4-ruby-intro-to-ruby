@@ -1,37 +1,37 @@
 # frozen_string_literal: true
 
-def add_numbers(a, b)
-  a + b
+def add_numbers(num_one, num_two)
+  num_one + num_two
 end
 
-def subtract_numbers(a, b)
-  a - b
+def subtract_numbers(num_one, num_two)
+  num_one - num_two
 end
 
-def multiply_numbers(a, b)
-  a * b
+def multiply_numbers(num_one, num_two)
+  num_one * num_two
 end
 
-def divide_with_slash(a, b)
-  a / b
+def divide_with_slash(num_one, num_two)
+  num_one / num_two
 end
 
-def modulo_division(a, b)
-  a % b
+def modulo_division(num_one, num_two)
+  num_one % num_two
 end
 
-def a_greater_than_b?(a, b)
-  a > b
+def a_greater_than_b?(num_one, num_two)
+  num_one > num_two
 end
 
-def a_equals_b?(a, b)
-  a == b
+def a_equals_b?(num_one, num_two)
+  num_one == num_two
 end
 
-def as_a_float(a)
-  a.to_f
+def as_a_float(num)
+  num.to_f
 end
 
-def as_a_fixnum(a)
-  a.to_i
+def as_a_fixnum(num)
+  num.to_i
 end
