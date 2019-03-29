@@ -121,6 +121,24 @@ Let's use `pry` to explore some of the fundamentals of the Ruby language.
 
 ## Ruby :: Core Syntax, Variables, and Operators
 
+### Numbers
+
+Numbers in Javascript compared to Ruby are very similar with some small
+differences.
+
+In Javscript there was really only one official type of number, but in Ruby
+there is a different type if a number is a whole _integer_ (no decimals) or
+a _float_ (contains decimals).
+
+Integers: `1`, `23`, and `-10000`
+Decimals: `3.14`, `-808.08` and `12.043e-04`
+
+Commas are not allowed in numbers, but underscores are. So if you feel the
+need to mark your thousands so the numbers are more readable,
+use an underscore.
+
+`population = 12_000_000_000`
+
 ### Semicolons
 
 We have been writing JavaScript without semicolons; however, when searching the
