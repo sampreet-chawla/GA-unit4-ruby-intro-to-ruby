@@ -19,8 +19,8 @@ of basic programming concepts, as well as give you an edge in the job market.
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
 you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
-as reading material, but as a handy place to define and experiment with the basics of
-Ruby.
+as reading material, but as a handy place to define and experiment with the
+basics of Ruby.
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ pry
 **[Pry](http://pryrepl.org/)** is a console-based
 **[REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)** for
 working with Ruby. Simply type in an expression into Pry, and it returns the result
-(preceded by `=> `, also known as a 'hash rocket').
+(preceded by `=>`, also known as a 'hash rocket').
 
 ```ruby
 [1] pry(main)> 1 + 1
@@ -102,12 +102,13 @@ not a part of the core Ruby library.
 You have to install the [Pry gem](https://rubygems.org/gems/pry/versions/0.11.3)
 to use it. One way is to run the `gem install pry` command from the command line.
 
-However, since we have `pry` listed in our project's `Gemfile`, we only need to do `bundle
-install`, which installs each gem in the Gemfile, including Pry.
+However, since we have `pry` listed in our project's `Gemfile`, we only need
+to do `bundle install`, which installs each gem in the Gemfile, including Pry.
 Using [Bundler](https://bundler.io/) and the Gemfile is the preferred way to
 manage and install dependencies for your Ruby projects.
 
-Now that Pry is installed, you can start using it by typing `pry` at the command line:
+Now that Pry is installed, you can start using it by typing `pry` at the
+command line:
 
 ```sh
 $ pry
@@ -123,8 +124,8 @@ Let's use `pry` to explore some of the fundamentals of the Ruby language.
 ### Semicolons
 
 We have been writing JavaScript without semicolons; however, when searching the
-internet for help, you most likely have encountered semicolons in solutions. In Ruby,
-there is a conspicuous lack of semicolons.
+internet for help, you most likely have encountered semicolons in solutions.
+In Ruby, there is a conspicuous lack of semicolons.
 
 ```ruby
 [1] pry(main)> 1
@@ -572,7 +573,6 @@ bundle exec rspec spec/fizzbuzz_hash_method_spec.rb
 JavaScript, `===` is a 'strict equality' comparator, while `==` is a
 'loose equality' comparator; since `==` has some weird exceptions, the
 convention is to almost always use `===`.
-
 **In Ruby, however, the reverse is true; you should `==` to test for equality,
 and *not* use `===`** (which does something different).
 
