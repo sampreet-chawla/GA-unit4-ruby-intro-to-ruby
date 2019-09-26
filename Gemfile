@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.6.3'
 gem 'byebug', '~> 10.0.0'
 gem 'pry', '~> 0.11.3'
 gem 'pry-byebug', '~> 3.6.0'
