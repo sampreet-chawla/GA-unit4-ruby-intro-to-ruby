@@ -552,7 +552,7 @@ However, there are a couple of important differences. For instance, Ruby
 hashes do not allow you to access their keys through a dot notation; you
 *must* use square braces.
 
-We can also define an object with keys and values already in it:
+We can also define a hash with keys and values already in it:
 
 ```ruby
 nums = {
