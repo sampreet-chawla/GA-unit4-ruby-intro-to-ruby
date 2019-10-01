@@ -18,7 +18,7 @@ of basic programming concepts, as well as give you an edge in the job market.
 
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
-you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
+you would the [HyperPolyglot](https://hyperpolyglot.org/scripting) reference: not
 as reading material, but as a handy place to define and experiment with the
 basics of Ruby.
 
@@ -66,8 +66,8 @@ features to cover. These include:
 
 ## Foreword
 
-The depth and breadth of the [Ruby Core](http://ruby-doc.org/core-2.5.0/) and
-[Standard Library](http://ruby-doc.org/stdlib-2.5.0/) are so extensive that
+The depth and breadth of the [Ruby Core](https://ruby-doc.org/core-2.6.3/) and
+[Standard Library](https://ruby-doc.org/stdlib-2.6.3/) are so extensive that
 we'll always want to check them before building something ourselves.  The
 official Ruby docs are our friends, and we should use them liberally.  Over
 time, we'll learn to remember the more common methods, but even then it can be
@@ -81,8 +81,8 @@ gem install pry
 pry
 ```
 
-**[Pry](http://pryrepl.org/)** is a console-based
-**[REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)** for
+**[Pry](https://pryrepl.org/)** is a console-based
+**[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)** for
 working with Ruby. Simply type in an expression into Pry, and it returns the result
 (preceded by `=>`, also known as a 'hash rocket').
 
@@ -94,7 +94,7 @@ working with Ruby. Simply type in an expression into Pry, and it returns the res
 
 > In addition to allowing us to run code one line at a time, Pry can also be
 > used (like the `node-debug` REPL we saw in Unit 1) to interactively debug our
-> code. Though we won't be focusing on that aspect of Pry today, it'll be a
+> code. We will use Pry to debug our code later today. it'll be a
 > critical tool throughout the rest of this unit.
 
 Pry is packaged within a Ruby _gem_, meaning it is a library or module that is
@@ -239,7 +239,7 @@ different operators like `*`, `-`, and even `||`.
 In pairs, open up `pry` and take five minutes trying out the operators we've
 used in JavaScript on numbers and numeric variables. Does anything surprising
 or confusing happen? Write those things down to share with the class.  Have a
-look in [operator_examples.rb](bin/operator_examples.rb) if you need some
+look in [operator_examples.rb](lib/operator_examples.rb) if you need some
 prompts.
 
 ## Ruby :: Strings
@@ -247,7 +247,7 @@ prompts.
 To see all the methods that strings have in Ruby, open up `pry`, type a string
 followed by a '.', and hit tab; alternatively, you can call
 `"some string".methods.sort` for a full list. And, of course, the Ruby documentation
-has [a full list](https://ruby-doc.org/core-2.5.0/String.html) as well.
+has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 
 Strings objects come with several conversion methods that all start `to_` and
 then a letter or abbreviation hinting at what conversion they perform.
@@ -260,7 +260,7 @@ Ruby attributes different meanings to single-quoted and
 double-quoted strings. Single-quoted strings are referred to as
 *'string literals'*; they interpret their contents as a literal sequence
 of characters, with only two recognized escape sequences - `\'` and `\\`.
-Double-quoted strings, in contrast, support a much wider variety of escape
+In contrast, double-quoted strings (" ") support a much wider variety of escape
 characters, including `\n` (new line), `\t` (tab), and `\s` (space); if `\n`
 appeared in a single-quoted string, it would be interpreted as the
 character `\` followed by the character `\n`, rather than a new line.
@@ -393,7 +393,7 @@ The `do ... end`
  blocks soon.
 
 `for` loops in Ruby exist, but are not commonly used. Instead, we use the
-[upto](http://ruby-doc.org/core-2.5.0/Integer.html#method-i-upto) enumerator.
+[upto](https://ruby-doc.org/core-2.6.3/Integer.html#method-i-upto) enumerator.
 We'll learn more about enumerators soon.
 
 ```ruby
@@ -513,7 +513,7 @@ code work like you'd expect?
 You can also verify your code is working by running
 
 ```sh
-bundle exec rspec spec/fizzbuzz_method_spec.rb
+bin/rspec spec/fizzbuzz_method_spec.rb
 ```
 
 ## Ruby :: Collections
@@ -550,9 +550,9 @@ that it consists of pairs of keys and values.
 
 However, there are a couple of important differences. For instance, Ruby
 hashes do not allow you to access their keys through a dot notation; you
-*must* use square braces.
+*must* use square braces. When you use a `.`, ruby thinks you are calling a method on an object.
 
-We can also define an object with keys and values already in it:
+We can also define a hash with keys and values already in it:
 
 ```ruby
 nums = {
@@ -563,7 +563,28 @@ nums = {
 
 In the example above, our hash has the keys `"odds"` and `"evens"` in quotes,
 which map to values `[1, 3, 5]` and `[2, 4, 6]` respectively. We use the
-hash rocket symbol here to link our keys to their values.
+hash rocket symbol here (or Fat Arrow) to link our keys to their values.
+
+Ruby has another way to define keys and values in hash:
+
+```ruby
+nums = {
+  "odds": [1, 3, 5],
+  "evens": [2, 4, 6]
+}
+```
+**One gotcha with the above** is that the above syntax turns the keys into _symbols_, so you will have to access your keys using `nums[:odds]`, even though you typed the keys as strings! Symbols are a special kind of String that start with a colon (`:`), and Ruby often uses these internally.
+
+So, the above syntax is equivalent to a third way you could define key value pairs within a hash:
+
+```ruby
+nums = {
+  :odds => [1, 3, 5],
+  :evens => [2, 4, 6]
+}
+```
+
+Whenever you need to see what the keys and values are in your hash, just print it out to the console using `p nums` within your code, or just typing `nums` within the Pry repl. When in doubt, log it out!
 
 ### Lab: FizzBuzz with Hashes
 
@@ -582,7 +603,7 @@ Run your code from the console using `ruby lib/fizzbuzz.rb`.
 This time, you can verify your code is working by running
 
 ```sh
-bundle exec rspec spec/fizzbuzz_hash_method_spec.rb
+bin/rspec spec/fizzbuzz_hash_method_spec.rb
 ```
 
 ## Common Gotchas When Learning Ruby After JavaScript
@@ -610,7 +631,7 @@ so it can be beneficial to include them.
 - The Ruby comment character is `#`. Everything following a `#` on a line
 is ignored by the interpreter.
 
-- p, [$stdout.]puts, [$stdout.]print are not directly analogous to
+- `p`, `puts`, and `print` are not directly analogous to
 console.log but are often used for a similar purpose when writing scripts
 run from the terminal.
 
@@ -626,12 +647,12 @@ will help with this as well.
 ## Additional Resources
 
 - [Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)
-- [why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)
+- [why's (poignant) Guide to Ruby](https://mislav.uniqpath.com/poignant-guide/)
 - [Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)
 - [Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)
 - [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
-- [Ruby Koans](http://rubykoans.com/)
+- [Ruby Koans](https://rubykoans.com/)
 
 ## [License](LICENSE)
 
