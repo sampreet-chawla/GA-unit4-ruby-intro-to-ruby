@@ -117,6 +117,8 @@ $ pry
 
 You can now execute commands. To quit, type `quit` (or `exit` or `ctrl-d`).
 
+Pry also gives us access to [ri](http://rubylearning.com/satishtalim/ruby_ri_tool.html). With this tool, you can look up the docs from within Pry!
+
 Let's use `pry` to explore some of the fundamentals of the Ruby language.
 
 ## Ruby :: Core Syntax, Variables, and Operators
@@ -653,6 +655,7 @@ will help with this as well.
 - [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
+- [View docs in pry with ri tool](http://rubylearning.com/satishtalim/ruby_ri_tool.html)
 
 ## [License](LICENSE)
 
