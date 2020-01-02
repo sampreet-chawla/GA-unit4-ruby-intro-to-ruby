@@ -18,7 +18,7 @@ of basic programming concepts, as well as give you an edge in the job market.
 
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
-you would the [HyperPolyglot](https://hyperpolyglot.org/scripting) reference: not
+you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
 as reading material, but as a handy place to define and experiment with the
 basics of Ruby.
 
@@ -647,7 +647,7 @@ will help with this as well.
 ## Additional Resources
 
 - [Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)
-- [why's (poignant) Guide to Ruby](https://mislav.uniqpath.com/poignant-guide/)
+- [why's (poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/)
 - [Ruby — Basic Data Types](https://blog.botreetechnologies.com/ruby-basic-data-types-12d63251e33c)
 - [Variable References and Mutability of Ruby Objects](https://launchschool.com/blog/references-and-mutability-in-ruby)
 - [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
