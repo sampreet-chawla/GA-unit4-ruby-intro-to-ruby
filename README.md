@@ -588,26 +588,6 @@ nums = {
 
 Whenever you need to see what the keys and values are in your hash, just print it out to the console using `p nums` within your code, or just typing `nums` within the Pry repl. When in doubt, log it out!
 
-### Lab: FizzBuzz with Hashes
-
-In pairs, use your current fizzbuzz code to help you create a new method called
-`fizzbuzz_hash`. In this method, create a hash containing keys `"fizz"`,
-`"buzz"`, `"fizzbuzz"`, and `"other"`, each with arrays as values. As you
-iterate through all the numbers from 1 to `max_num`, add each number to one
-of the arrays mentioned above; numbers divisible by 3 *only* should go into
-the `"fizz"` array, numbers divisible by 5 *only* should go into the ``"buzz"``
-array, numbers divisible by both should go into the `"fizzbuzz"` array, and
-numbers divisible by neither should go into the `"other"` array. Finally,
-once you're done, return the hash as the result of `fizzbuzz`.
-
-Run your code from the console using `ruby lib/fizzbuzz.rb`.
-
-This time, you can verify your code is working by running
-
-```sh
-bin/rspec spec/fizzbuzz_hash_method_spec.rb
-```
-
 ## Common Gotchas When Learning Ruby After JavaScript
 
 - `==` and `===` mean different things between the two languages. In
