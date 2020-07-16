@@ -22,10 +22,6 @@ you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
 as reading material, but as a handy place to define and experiment with the
 basics of Ruby.
 
-## Prerequisites
-
-- [ga-wdi-boston/js](https://git.generalassemb.ly/ga-wdi-boston/js)
-- [ga-wdi-boston/js-reference-types](https://git.generalassemb.ly/ga-wdi-boston/js-reference-types)
 
 ## Objectives
 
@@ -37,21 +33,12 @@ By the end of this, developers should be able to:
 - List and use common operators in Ruby.
 - Identify operators in an expression and explain what they do.
 
-## Preparation
-
-1. Fork and clone this repository.
- [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
-1. Create a new branch, `training`, for your work.
-1. Checkout to the `training` branch.
-1. Install dependencies with `bundle install`.
 
 ## Outline
 
 In order to accomplish our learning objectives, we've got quite a number of Ruby
 features to cover. These include:
 
-- Running scripts from the command line.
-- Evaluating code interactively in a REPL.
 - Variable declaration and naming conventions.
 - Strings, interpolation, and concatenation.
 - Methods and functions, including predicates.
@@ -73,53 +60,49 @@ official Ruby docs are our friends, and we should use them liberally.  Over
 time, we'll learn to remember the more common methods, but even then it can be
 extremely useful to consult the documentation.
 
-## Pry
+## Creating and running a ruby file
+- Create a file called `ruby.rb`
+- Open this file in your text editor and write 
 
-```sh
-gem install bundler
-gem install pry
-pry
-```
+  ```ruby
+  puts("hello World")
+  ```
 
-**[Pry](https://pryrepl.org/)** is a console-based
-**[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)** for
-working with Ruby. Simply type in an expression into Pry, and it returns the result
-(preceded by `=>`, also known as a 'hash rocket').
+- Open your terminal and run your `ruby.rb` file by running `ruby ruby.rb`
+
+You ran your first ruby file!
+
+<img src="https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif" alt="ruby" width="300px" >
+
+## Ruby :: Basic Syntax
+
+- We don't need the keyword `var` anymore
+- We don't need to end statements with semi-colons
+- Single line comments are a `#`
+- most variables use `snake_case` naming conventions
 
 ```ruby
-[1] pry(main)> 1 + 1
-=> 2
-[2] pry(main)>
+long_variable_name = 1 #assign long_variable_name the value of 1. Note snake_case naming convention
 ```
 
-> In addition to allowing us to run code one line at a time, Pry can also be
-> used (like the `node-debug` REPL we saw in Unit 1) to interactively debug our
-> code. We will use Pry to debug our code later today. it'll be a
-> critical tool throughout the rest of this unit.
 
-Pry is packaged within a Ruby _gem_, meaning it is a library or module that is
-not a part of the core Ruby library.
-You have to install the [Pry gem](https://rubygems.org/gems/pry/versions/0.11.3)
-to use it. One way is to run the `gem install pry` command from the command line.
+## Ruby :: Working with the terminal
 
-However, since we have `pry` listed in our project's `Gemfile`, we only need
-to do `bundle install`, which installs each gem in the Gemfile, including Pry.
-Using [Bundler](https://bundler.io/) and the Gemfile is the preferred way to
-manage and install dependencies for your Ruby projects.
+- The equivalent of console.log() is `puts`
+- functions in ruby don't need parentheses
 
-Now that Pry is installed, you can start using it by typing `pry` at the
-command line:
-
-```sh
-$ pry
-[1] pry(main)>
+```ruby
+puts('hi'); #JavaScript way
+puts 'hi'
+p 'hi' #shorter syntax
 ```
 
-You can now execute commands. To quit, type `quit` (or `exit` or `ctrl-d`).
+We can also retrieve values from user input using `gets`
 
-Pry also gives us access to [ri](http://rubylearning.com/satishtalim/ruby_ri_tool.html). With this tool, you can look up the docs from within Pry!
-
-Let's use `pry` to explore some of the fundamentals of the Ruby language.
+```ruby
+some_var = gets
+puts some_var
+```
 
 ## Ruby :: Core Syntax, Variables, and Operators
 
@@ -143,13 +126,11 @@ use an underscore.
 
 ### Semicolons
 
-We have been writing JavaScript without semicolons; however, when searching the
-internet for help, you most likely have encountered semicolons in solutions.
 In Ruby, there is a conspicuous lack of semicolons.
 
 ```ruby
-[1] pry(main)> 1
-=> 1
+a = 1
+puts(a)
 ```
 
 The end of a line (almost always) marks the end of an expression; semicolons
@@ -166,24 +147,13 @@ means that with Ruby, we don't need keywords like `let` and `const` before varia
 We can simply declare the variable and assign it a value `variable = value`.
 
 ```ruby
-[1] pry(main)> a = 1
-=> 1
+a = 1
+puts 1
 ```
 
 However, this only works if we assign the variable a value. Why? Because
 otherwise, Ruby will default to trying to *evaluate* your variable, and because
 you haven't defined it yet, Ruby will throw an error.
-
-```ruby
-[1] pry(main)> counter
-NameError: undefined local variable or method 'counter' for main:Object
-from (pry):1:in '__pry__'
-[2] pry(main)> counter = 0
-=> 0
-[3] pry(main)> counter
-=> 0
-[4] pry(main)>
-```
 
 Ruby has its own set of scoping rules for variables, just like JavaScript does,
 and they work in (mostly) similar ways.
@@ -642,5 +612,4 @@ will help with this as well.
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
-# ruby
 # ruby
