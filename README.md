@@ -143,7 +143,7 @@ We can simply declare the variable and assign it a value `variable = value`.
 
 ```ruby
 a = 1
-puts 1
+puts a
 ```
 
 However, this only works if we assign the variable a value. Why? Because
