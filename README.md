@@ -873,6 +873,7 @@ Run your code from the console using `ruby fizzbuzz.rb`.
 <br>
 <hr>
 <img src="https://memeshappen.com/media/created/2019/05/Ruby-You-rock.jpg" width="500px">
+
 ## Common Gotchas When Learning Ruby After JavaScript
 
 - `==` and `===` mean different things between the two languages. In
