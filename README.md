@@ -27,9 +27,7 @@ basics of Ruby.
 
 By the end of this, developers should be able to:
 
-- Run Ruby code using Ruby REPL and interpreter.
 - Identify basic language features and types in Ruby.
-- Write a fizzbuzz script in Ruby.
 - List and use common operators in Ruby.
 - Identify operators in an expression and explain what they do.
 
@@ -88,6 +86,7 @@ puts 'hi'
 p 'hi' #shorter syntax
 ```
 
+
 We can also retrieve values from user input using `gets`
 
 ```ruby
@@ -134,6 +133,7 @@ spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) 
 used *very* infrequently in Ruby.
 
 <br>
+
 ### Variable Declaration
 
 Ruby handles variables differently than we've previously seen. In Ruby,
@@ -179,6 +179,7 @@ are assignment operators (e.g. `=`), logical operators
 (e.g. `||`, `&&`, `!`), and control flow operators (e.g. `and`, `or`, `not`).
 
 <br>
+
 #### Brief Aside: Syntactic Sugar
 
 Ruby doesn't have an increment operator, either pre (`++i`) or post (`i++`).
@@ -222,10 +223,11 @@ counter -= 1           # counter = counter - 1
 ```
 
 <br>
+
 ## Ruby :: Strings
 
-To see all the methods that strings have in Ruby, open up `pry`, type a string
-followed by a '.', and hit tab; alternatively, you can call
+To see all the methods that strings have in Ruby, open up your `ruby.rb`, `put` a string
+followed by a '.methods', and hit tab; alternatively, you can call
 `"some string".methods.sort` for a full list. And, of course, the Ruby documentation
 has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 
@@ -255,18 +257,15 @@ string conversions need to be done manually using `.to_s`.
 ```ruby
 
 name = "Lauren"
+puts name
 => "Lauren"
 
 height_in_feet = 5
+puts height_in_feet
 => 5
 
-puts height_in_feet
-5
-=> nil
-
 puts name + " is " + height_in_feet + " feet tall."
-TypeError: no implicit conversion of Fixnum into String
-from (pry):3:in '+'
+ruby.rb:20:in `+': no implicit conversion of Integer into String (TypeError)`
 
 puts name + " is " + height_in_feet.to_s + " feet tall."
 => "Lauren is 5 feet tall."
@@ -315,6 +314,10 @@ This also works:
 <br>
 
 ## Ruby :: Flow Control
+
+<img src="https://i.giphy.com/media/h8y265b9iKtzKT0pDj/giphy.webp" width="600px">
+
+
 
 ### Conditionals
 
@@ -389,7 +392,7 @@ end
 
 ### Code Along: `upto`
 
-In our `pry` consoles, let's enter:
+In our `ruby.rb` file, let's enter:
 
 ```ruby
 1.upto(10) do |i|
@@ -401,11 +404,11 @@ What do you expect to print? What does print?
 
 ### Lab: FizzBuzz
 
-This time, rather than using `pry`, we're going to write a longer program in
-Atom, and then run it in the terminal using `ruby`, a command line Ruby
-environment. Open up the file [fizzbuzz.rb](lib/fizzbuzz.rb);
-in pairs, you're going to solve "FizzBuzz", a simple programming challenge
-based on a childrens' game. Essentially, your program should print out all of
+Create a new file called `fizzbuzz.rb`.
+In pairs, you're going to solve "FizzBuzz", a simple programming challenge
+based on a childrens' game. 
+
+Essentially, your program should print out all of
 the numbers from 1 up to `max_num`, which is a variable to which you can assign
 an arbitrary (positive, integer) value. However, if a number is divisible by
 3, instead of printing the number, your program should print the word "fizz";
@@ -438,12 +441,14 @@ FizzBuzz
 ```
 
 To run your code, simply navigate to the root of this repository and run
-`ruby lib/fizzbuzz.rb`
+`ruby fizzbuzz.rb`
 
 > Running a script in this way should seem familiar, since it's exactly what we
-> were doing with `node` in Unit 1. It's a deliberate similarity - Node was
+> were doing with `node`. It's a deliberate similarity - Node was
 > modeled off of other console-based runtime environments, as a way of giving
 > JavaScript a solid platform for running on the server side.
+
+<img src="https://i.giphy.com/media/ZVik7pBtu9dNS/giphy.webp" width="500px">
 
 <br>
 
@@ -469,6 +474,7 @@ it is called from, rather than returning a new object.
 
 Ruby methods use an *implicit return* - by default, they will return the value
 of the last expression evaluated (which may or may not be a return expression).
+
 However, Ruby does also have a `return` keyword which, as it does in
 JavaScript, immediately terminates the function/method and sends back a value.
 In the case of the method above, `square?` will return the value of that last
@@ -480,29 +486,38 @@ expression, `Math.sqrt(num).to_i**2 == num`.
 Take your code from the previous exercise and turn it into a method called
 `fizzbuzz`; this method should accept an argument, `max_num`.
 
-At the end of your program, add the following two lines:
+At the end of your program, add the following line:
+
+```ruby
+
+p fizzbuzz(10)
+
+```
 
 
 Once you're finished writing your method, run the program with
-`ruby fizzbuzz.rb`; the console should take you to `pry`, allowing you to
-read from (and even write to) your program. Once there, try calling your
-`fizzbuzz` method with the following arguments : 10, 15, 30, 50. Does your
-code work like you'd expect?
+`ruby fizzbuzz.rb`.
+
+Does your code work like you'd expect?
 
 You can also verify your code is working by running
 
-```sh
-bin/rspec spec/fizzbuzz_method_spec.rb
-```
 
 <br>
 
 ## Ruby :: Collections
 
+<img src="https://lh3.googleusercontent.com/proxy/aXes9jUEqUGKctINdAu6MO5Drk1Sf5j4qCGwstjHqVHOi2KbQTW4zQkHDCPylnio1Mn_" width="500px">
+
 ### Arrays
 
-Arrays in Ruby are almost identical to arrays in JavaScript, down to the
-square braces.
+
+In Ruby, "Arrays are ordered, integer-indexed collections of any object." From
+that, [Ruby Arrays](https://ruby-doc.org/core-2.6.3/Array.html) seem a lot like
+JavaScript Arrays.
+
+But there are some important differences.
+
 
 ```ruby
 
@@ -519,7 +534,145 @@ my_array
 => ["a","b","z"]
 ```
 
+
+
+## Creating a Ruby Array
+
+As with JavaScript, Ruby Arrays can be created using literals (technically, a
+constructor method on class Array) and with a constructor.
+
+### Demo
+
+```rb
+# literal syntax:
+developers = []
+# => []
+
+# constructor syntax:
+developers = Array.new
+# => []
+```
+
+With the literal syntax, we can create an array with initial values.
+
+```rb
+not_the_same_type = [[], 'one', 2.0, 3]
+# => [[], "one", 2.0, 3]
+
+developers = ['Caleb', 'Joel', 'Julia', 'Adam']
+# => ["Caleb", "Joel", "Julia", "Adam"]
+```
+
+If all of the entries are strings, Ruby provides a (Perl inspired) string
+[quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation)
+mechanism to create an Array:
+
+```rb
+developers = %w[Caleb Joel Julia Adam]
+# => ["Caleb", "Joel", "Julia", "Adam"]
+```
+
+How does this compare with
+[creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+JavaScript Arrays?
+
+## Assigning and accessing elements in a Ruby Array
+
+### Demo
+
+Let's explore accessing elements in an array and assigning elements at a
+specific index in an array:
+
+- [`Array#[]`](https://ruby-doc.org/core-2.6.3/Array.html#method-i-5B-5D)
+  (Element Reference)
+- [`Array#[]=`](https://ruby-doc.org/core-2.6.3/Array.html#method-i-5B-5D-3D)
+  (Element Assignment)
+
+```rb
+developers[0] # Are we accessing or assigning at index 0?
+# => "Caleb"
+
+developers[-1]
+# => "Adam"
+
+developers[-4] == developers[0]
+# => true
+
+developers[developers.length]
+# => nil
+# What index are we accessing? Why is it nil?
+
+developers[-5]
+# => nil
+
+developers[-3, 3]
+# => ["Joel", "Julia", "Adam"]
+# *Note* the optional 2nd argument. What do the docs say about this?
+# https://ruby-doc.org/core-2.5.0/Array.html#method-i-5B-5D
+
+developers[-2, 2]
+# => ["Julia", "Adam"]
+
+developers[-5] = 'Kira'
+# IndexError: index -5 too small for array; minimum: -4
+
+developers[developers.length] = 'Kira'
+# => "Kira"
+# To what index are we assigning?
+
+```
+
+## Adding and Removing Elements from Both ends of an Array
+
+### Code Along: Let's Explore
+
+- [Array#push](https://ruby-doc.org/core-2.6.3/Array.html#method-i-push):  Append (put element at end), also available through the
+_alias_, [<<](https://ruby-doc.org/core-2.6.3/Array.html#method-i-3C-3C)
+- [Array#pop](https://ruby-doc.org/core-2.6.3/Array.html#method-i-pop): Remove from end of array
+- [Array#unshift](https://ruby-doc.org/core-2.6.3/Array.html#method-i-unshift): Prepend (put element at beginning)
+- [Array#shift](https://ruby-doc.org/core-2.6.3/Array.html#method-i-shift): Remove from beginning
+
+```rb
+developers << 'Kosta'
+# => ['Caleb', 'Joel', 'Julia', 'Adam', 'Kira', 'Kosta']
+
+developers.push 'Rick'
+# => ['Caleb', 'Joel', 'Julia', 'Adam', 'Kira', 'Kosta', 'Rick']
+
+developers << 'Johnathan' << 'Peter'
+# => ['Caleb',
+#   'Joel',
+#   'Julia',
+#   'Adam',
+#   'Kira',
+#   'Kosta',
+#   'Rick',
+#   'Johnathan',
+#   'Peter']
+
+developers.pop
+# 'Peter'
+
+developers.shift 4
+# => ['Caleb', 'Joel', 'Julia', 'Adam']
+
+developers
+# => ['Kira', 'Kosta', 'Rick', 'Johnathan', 'Peter']
+
+developers.unshift 'Guillermo'
+# => ['Guillermo', 'Kira', 'Kosta', 'Rick', 'Johnathan', 'Peter']
+```
+
+<br>
+
 ### Hashes
+
+In Ruby, "A Hash is a dictionary-like collection of unique keys and their
+values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.5.0/Hash.html)
+are not the most general object in the language, but are instances of a
+specialized class for key/value storage.
+
+
 
 A Ruby hash acts somewhat like a dictionary (or object) in JavaScript, in
 that it consists of pairs of keys and values.
@@ -574,6 +727,152 @@ nums = {
 
 Whenever you need to see what the keys and values are in your hash, just print it out to the console using `p nums` within your code, or just typing `nums` within the Pry repl. When in doubt, log it out!
 
+## Ruby Symbols
+
+A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of
+characters that is stored, at most, once in any instance of the Ruby interpreter.
+
+In Ruby, strings are compared a character at a time, but symbols are compared
+by `object_id`.  This makes comparing symbols fast and therefore much more
+performant than strings when used as keys in a `Hash`.
+
+### Demo: Test Equivalency
+
+Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
+
+```rb
+'bob'.equal? 'bob'
+# => false
+
+'bob' == 'bob'
+# => true
+
+'bob'.object_id == 'bob'.object_id
+# => false
+
+:bob.equal? :bob
+# => true
+
+:bob == :bob
+# => true
+
+:bob.object_id == :bob.object_id
+# => true
+```
+
+Remember that everything is an object in Ruby, so everything has its own
+`object_id`. Each string of `'bob'` gets a different `object_id`, but the
+symbol `:bob` will always have the same `object_id`.
+
+## Creating Ruby Hashes
+
+Let's look at different ways to create a Hash and then add some key value pairs
+to it.
+
+### Demo: Hash Creation
+
+```rb
+apartment = {}
+# => {}
+
+apartment = Hash.new
+# => {}
+
+apartment = Hash.new('')
+# => {}
+
+apartment[:address]
+# => ""
+
+apartment[:address] = { street: '255 Long Road', city: 'Awesomeville' }
+# => {:street=>"255 Long Road", :city=>"Awesomeville"}
+
+apartment[:bedrooms] = 3
+# => 3
+
+priced_apartment = apartment.merge(rent: 1000)
+# => {:address=>{:street=>"255 Long Road", :city=>"Awesomeville"}, :bedrooms=>3, :rent=>1000}
+```
+
+Picking sensible defaults may not always be easy.
+
+### Lab: Hash Literal
+
+In `ruby.rb`, assign a hash using the literal syntax to the
+variable `apartment`. Then, assign the keys `:sq_ft` and `:pets_allowed`,
+each with a type-appropriate value of your choice. Finally, assign a default
+value of `[]` to the hash and make sure that accessing non-existing keys return
+the default value.
+
+## Assigning and Accessing Elements in a Ruby Hash
+
+### Demo: Accessing, Modifying, and Deleting
+
+```rb
+priced_apartment[:occupants] = []
+# => []
+
+lee = { name: 'Lee', age: 24, dog: 'Fluffy' }
+# => {:name=>"Lee", :age=>24, :dog=>"Fluffy"}
+
+adrian = { name: 'Adrian', age: 25, cat: 'Scratchy' }
+# => {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}
+
+priced_apartment[:occupants].push(lee, adrian)
+# => [{:name=>"Lee", :age=>24, :dog=>"Fluffy"},
+# {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}]
+
+priced_apartment[:occupants][1].delete(:cat)
+# => "Scratchy"
+
+priced_apartment[:rent] += 150
+# => 1150
+```
+
+### Lab: Appending
+
+Create an `:occupants` key with the value of `[]` to the `apartment` hash in
+`ruby.rb`. Add roommate Bo to `:occupants`. Append one or more
+properties of your choosing to the roommate hash, such as `:job` or
+`:education`.
+
+### Demo: Hash Keys
+
+To get an Array of the keys that have been set in a hash, use `Hash#keys`.
+
+```rb
+priced_apartment.keys
+# => [:address, :bedrooms, :occupants, :rent]
+```
+
+### Demo: Hash as Final Argument to Method
+
+If the last argument to a method is a hash, you may omit the curly braces.
+
+```rb
+[].push 4, 'hi', first_name: 'sam', last_name: 'allen'
+# => [4, "hi", {:first_name=>"sam", :last_name=>"allen"}]
+```
+
+### Lab: FizzBuzz with Hashes
+
+Time to recreate the classic FizzBuzz problem with hashes!
+
+Inside `fizzbuzz.rb`, create a hash containing keys `"fizz"`, `"buzz"`,
+`"fizzbuzz"`, and `"other"`, each with arrays as values. As you iterate through
+all the numbers from 1 to `max_num`, add each number to one of the arrays
+mentioned above; numbers divisible by 3 *only* should go into the `"fizz"`
+array, numbers divisible by 5 *only* should go into the ``"buzz"`` array,
+numbers divisible by both should go into the `"fizzbuzz"` array, and numbers
+divisible by neither should go into the `"other"` array. Finally, once you're
+done, return the hash as the result of `fizzbuzz`.
+
+Run your code from the console using `ruby fizzbuzz.rb`.
+
+<br>
+<br>
+<hr>
+<img src="https://memeshappen.com/media/created/2019/05/Ruby-You-rock.jpg" width="500px">
 ## Common Gotchas When Learning Ruby After JavaScript
 
 - `==` and `===` mean different things between the two languages. In
@@ -606,10 +905,6 @@ run from the terminal.
 - Ruby's convention is to use underscores between words in names (a.k.a.
 'snake_case'). Constants start with a capital letter.
 
-- Use VSCodes tab completion to avoid the common, and hard to find error of
-writing `def method_name` and forgetting the closing `end`. Good indentation
-will help with this as well.
-
 - Ruby doesn't implicitly convert numbers to strings.
 
 ## Additional Resources
@@ -621,11 +916,11 @@ will help with this as well.
 - [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
-- [View docs in pry with ri tool](http://rubylearning.com/satishtalim/ruby_ri_tool.html)
+
 
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
-# ruby
+
