@@ -74,17 +74,8 @@ You ran your first ruby file!
 
 <img src="https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif" alt="ruby" width="300px" >
 
-## Ruby :: Basic Syntax
-
-- We don't need the keyword `var` anymore
-- We don't need to end statements with semi-colons
-- Single line comments are a `#`
-- most variables use `snake_case` naming conventions
-
-```ruby
-long_variable_name = 1 #assign long_variable_name the value of 1. Note snake_case naming convention
-```
-
+<br>
+<br>
 
 ## Ruby :: Working with the terminal
 
@@ -103,6 +94,7 @@ We can also retrieve values from user input using `gets`
 some_var = gets
 puts some_var
 ```
+<br>
 
 ## Ruby :: Core Syntax, Variables, and Operators
 
@@ -124,6 +116,8 @@ use an underscore.
 
 `population = 12_000_000_000`
 
+<br>
+
 ### Semicolons
 
 In Ruby, there is a conspicuous lack of semicolons.
@@ -139,6 +133,7 @@ are only required if you have two distinct expressions on one line
 spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
 used *very* infrequently in Ruby.
 
+<br>
 ### Variable Declaration
 
 Ruby handles variables differently than we've previously seen. In Ruby,
@@ -155,8 +150,23 @@ However, this only works if we assign the variable a value. Why? Because
 otherwise, Ruby will default to trying to *evaluate* your variable, and because
 you haven't defined it yet, Ruby will throw an error.
 
+```ruby
+counter
+=> Traceback (most recent call last):
+ruby.rb:8:in `<main>': undefined local variable or method `counter' for main:Object (NameError)'
+
+counter = 0
+=> 0
+
+puts counter
+=> 0
+
+```
+
 Ruby has its own set of scoping rules for variables, just like JavaScript does,
 and they work in (mostly) similar ways.
+
+<br>
 
 ### Operators
 
@@ -168,22 +178,23 @@ encounter are actually method calls on some object; the main exceptions
 are assignment operators (e.g. `=`), logical operators
 (e.g. `||`, `&&`, `!`), and control flow operators (e.g. `and`, `or`, `not`).
 
+<br>
 #### Brief Aside: Syntactic Sugar
 
 Ruby doesn't have an increment operator, either pre (`++i`) or post (`i++`).
 Use `+=` instead.
 
 ```ruby
-pry(main)> counter = 0
+counter = 0
 => 0
 
-pry(main)> counter += 1
+counter += 1
 => 1
 
-pry(main)> counter += 1
+counter += 1
 => 2
 
-pry(main)> counter
+counter
 => 2
 ```
 
@@ -196,24 +207,21 @@ Just like with JavaScript and other languages, you can combine assignment with m
 different operators like `*`, `-`, and even `||`.
 
 ```ruby
-[1] pry(main)> counter ||= 0          # counter = counter || 0
+
+counter ||= 0          # counter = counter || 0
 => 0
-[2] pry(main)> counter += 1           # counter = counter + 1
+
+counter += 1           # counter = counter + 1
 => 1
-[3] pry(main)> counter *= 5           # counter = counter * 5
+
+counter *= 5           # counter = counter * 5
 => 5
-[4] pry(main)> counter -= 1           # counter = counter - 1
+
+counter -= 1           # counter = counter - 1
 => 4
 ```
 
-#### Lab: Pry
-
-In pairs, open up `pry` and take five minutes trying out the operators we've
-used in JavaScript on numbers and numeric variables. Does anything surprising
-or confusing happen? Write those things down to share with the class.  Have a
-look in [operator_examples.rb](lib/operator_examples.rb) if you need some
-prompts.
-
+<br>
 ## Ruby :: Strings
 
 To see all the methods that strings have in Ruby, open up `pry`, type a string
@@ -245,17 +253,22 @@ Ruby doesn't implicitly convert numbers to strings, so all those
 string conversions need to be done manually using `.to_s`.
 
 ```ruby
-[1] pry(main)> name = "Lauren"
+
+name = "Lauren"
 => "Lauren"
-[2] pry(main)> height_in_feet = 5
+
+height_in_feet = 5
 => 5
-[3] pry(main)> puts height_in_feet
+
+puts height_in_feet
 5
 => nil
-[4] pry(main)> puts name + " is " + height_in_feet + " feet tall."
+
+puts name + " is " + height_in_feet + " feet tall."
 TypeError: no implicit conversion of Fixnum into String
 from (pry):3:in '+'
-[5] pry(main)> puts name + " is " + height_in_feet.to_s + " feet tall."
+
+puts name + " is " + height_in_feet.to_s + " feet tall."
 => "Lauren is 5 feet tall."
 ```
 
@@ -267,39 +280,39 @@ converted to a string.
 So instead of:
 
 ```ruby
-[1] pry(main)> name = "Lauren"
+name = "Lauren"
 => "Lauren"
-[2] pry(main)> height_in_feet = 5
+
+height_in_feet = 5
 => 5
-[3] pry(main)> name + " is " + height_in_feet.to_s + " feet tall."
+
+name + " is " + height_in_feet.to_s + " feet tall."
 => "Lauren is 5 feet tall."
 ```
 
 We can use:
 
 ```ruby
-[1] pry(main)> name = "Lauren"
+
+name = "Lauren"
 => "Lauren"
-[2] pry(main)> height_in_feet = 5
+
+height_in_feet = 5
 => 5
-[4] pry(main)> "#{name} is #{height_in_feet} feet tall."
+
+"#{name} is #{height_in_feet} feet tall."
 => "Lauren is 5 feet tall."
 ```
 
 This also works:
 
 ```ruby
-[5] pry(main)> "ten + seven == #{10 + 7}"
+
+"ten + seven == #{10 + 7}"
 => "ten + seven == 17"
 ```
-
-### Lab: String Methods
-
-In your pairs, go to the Ruby documentation for strings (link above), and look
-up three of the methods available to Ruby strings. Open up `pry` and test them
-out on some sample strings. Try to incorporate string interpolation at least
-once. Once you're done, we'll reconvene as a class and discuss the methods
-we've explored.
+<br>
+<br>
 
 ## Ruby :: Flow Control
 
@@ -432,6 +445,8 @@ To run your code, simply navigate to the root of this repository and run
 > modeled off of other console-based runtime environments, as a way of giving
 > JavaScript a solid platform for running on the server side.
 
+<br>
+
 ## Ruby :: Methods
 
 Ruby draws no distinction between functions that are properties of objects and
@@ -459,6 +474,7 @@ JavaScript, immediately terminates the function/method and sends back a value.
 In the case of the method above, `square?` will return the value of that last
 expression, `Math.sqrt(num).to_i**2 == num`.
 
+<br>
 ### Lab: Fizzbuzz Method
 
 Take your code from the previous exercise and turn it into a method called
@@ -466,15 +482,6 @@ Take your code from the previous exercise and turn it into a method called
 
 At the end of your program, add the following two lines:
 
-```ruby
-binding.pry
-''
-```
-
-`binding.pry` inserts a breakpoint into the program; this will cause the
-program to stop and let us look around. The second line, with the empty
-string, is only necessary because `binding.pry` won't work if it's the last
-line in your program - it needs to stop *before* something else.
 
 Once you're finished writing your method, run the program with
 `ruby fizzbuzz.rb`; the console should take you to `pry`, allowing you to
@@ -488,6 +495,8 @@ You can also verify your code is working by running
 bin/rspec spec/fizzbuzz_method_spec.rb
 ```
 
+<br>
+
 ## Ruby :: Collections
 
 ### Arrays
@@ -496,13 +505,17 @@ Arrays in Ruby are almost identical to arrays in JavaScript, down to the
 square braces.
 
 ```ruby
-[1] pry(main)> my_array = ["a","b","c"]
+
+my_array = ["a","b","c"]
 => ["a","b","c"]
-[2] pry(main)> my_array[0]
+
+my_array[0]
 => "a"
-[4] pry(main)> my_array[2] = "z"
+
+my_array[2] = "z"
 => "z"
-[5] pry(main)> my_array
+
+my_array
 => ["a","b","z"]
 ```
 
@@ -512,11 +525,14 @@ A Ruby hash acts somewhat like a dictionary (or object) in JavaScript, in
 that it consists of pairs of keys and values.
 
 ```ruby
-[1] pry(main)> dict = {}
+
+dict = {}
 => {}
-[2] pry(main)> dict["a"] = 23
+
+dict["a"] = 23
 => 23
-[3] pry(main)> dict["a"]
+
+dict["a"]
 => 23
 ```
 
@@ -590,7 +606,7 @@ run from the terminal.
 - Ruby's convention is to use underscores between words in names (a.k.a.
 'snake_case'). Constants start with a capital letter.
 
-- Use Atom tab completion to avoid the common, and hard to find error of
+- Use VSCodes tab completion to avoid the common, and hard to find error of
 writing `def method_name` and forgetting the closing `end`. Good indentation
 will help with this as well.
 
