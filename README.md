@@ -77,6 +77,7 @@ You ran your first ruby file!
 
 ## Ruby :: Working with the terminal
 
+## Logging in Ruby
 - The equivalent of console.log() is `puts`
 - functions in ruby don't need parentheses
 
@@ -86,8 +87,19 @@ puts 'hi'
 p 'hi' #shorter syntax
 ```
 
+`puts` is used most often.
 
-We can also retrieve values from user input using `gets`
+### What is the difference between `puts` and `p`
+`p vs puts vs print`
+
+- `p` calls `.inspect` on an element, which will display it with all its information including quotes, if it is a string.
+- `puts` just prints the element (without extra information) and like `p`, includes a newline char `\n`
+- `print` also just prints, but does not include a newline char.
+
+## `gets`
+
+You can get input from a user in the console using gets.
+
 
 ```ruby
 some_var = gets
@@ -166,6 +178,8 @@ puts counter
 Ruby has its own set of scoping rules for variables, just like JavaScript does,
 and they work in (mostly) similar ways.
 
+We will talk about this later.
+
 <br>
 
 ### Operators
@@ -227,7 +241,13 @@ counter -= 1           # counter = counter - 1
 ## Ruby :: Strings
 
 To see all the methods that strings have in Ruby, open up your `ruby.rb`, `put` a string
-followed by a '.methods', and hit tab; alternatively, you can call
+followed by a `.methods`, an run your file; 
+
+```ruby
+put "Madeline".methods`
+```
+
+Alternatively, you can call
 `"some string".methods.sort` for a full list. And, of course, the Ruby documentation
 has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 
@@ -451,6 +471,8 @@ To run your code, simply navigate to the root of this repository and run
 <img src="https://i.giphy.com/media/ZVik7pBtu9dNS/giphy.webp" width="500px">
 
 <br>
+<br>
+<br>
 
 ## Ruby :: Methods
 
@@ -465,7 +487,9 @@ def square? (num)
 end
 ```
 
-The question mark is conventional for methods that return a boolean.  Another
+The question mark is conventional for methods that return a boolean.  
+
+Another
 common convention in Ruby is a trailing exclamation point, which indicates that
 a method is a 'mutator' - this means that the method changes the object that
 it is called from, rather than returning a new object.
@@ -500,378 +524,6 @@ Once you're finished writing your method, run the program with
 
 Does your code work like you'd expect?
 
-You can also verify your code is working by running
-
-
-<br>
-
-## Ruby :: Collections
-
-<img src="https://lh3.googleusercontent.com/proxy/aXes9jUEqUGKctINdAu6MO5Drk1Sf5j4qCGwstjHqVHOi2KbQTW4zQkHDCPylnio1Mn_" width="500px">
-
-### Arrays
-
-
-In Ruby, "Arrays are ordered, integer-indexed collections of any object." From
-that, [Ruby Arrays](https://ruby-doc.org/core-2.6.3/Array.html) seem a lot like
-JavaScript Arrays.
-
-But there are some important differences.
-
-
-```ruby
-
-my_array = ["a","b","c"]
-=> ["a","b","c"]
-
-my_array[0]
-=> "a"
-
-my_array[2] = "z"
-=> "z"
-
-my_array
-=> ["a","b","z"]
-```
-
-
-
-## Creating a Ruby Array
-
-As with JavaScript, Ruby Arrays can be created using literals (technically, a
-constructor method on class Array) and with a constructor.
-
-### Demo
-
-```rb
-# literal syntax:
-developers = []
-# => []
-
-# constructor syntax:
-developers = Array.new
-# => []
-```
-
-With the literal syntax, we can create an array with initial values.
-
-```rb
-not_the_same_type = [[], 'one', 2.0, 3]
-# => [[], "one", 2.0, 3]
-
-developers = ['Caleb', 'Joel', 'Julia', 'Adam']
-# => ["Caleb", "Joel", "Julia", "Adam"]
-```
-
-If all of the entries are strings, Ruby provides a (Perl inspired) string
-[quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation)
-mechanism to create an Array:
-
-```rb
-developers = %w[Caleb Joel Julia Adam]
-# => ["Caleb", "Joel", "Julia", "Adam"]
-```
-
-How does this compare with
-[creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-JavaScript Arrays?
-
-## Assigning and accessing elements in a Ruby Array
-
-### Demo
-
-Let's explore accessing elements in an array and assigning elements at a
-specific index in an array:
-
-- [`Array#[]`](https://ruby-doc.org/core-2.6.3/Array.html#method-i-5B-5D)
-  (Element Reference)
-- [`Array#[]=`](https://ruby-doc.org/core-2.6.3/Array.html#method-i-5B-5D-3D)
-  (Element Assignment)
-
-```rb
-developers[0] # Are we accessing or assigning at index 0?
-# => "Caleb"
-
-developers[-1]
-# => "Adam"
-
-developers[-4] == developers[0]
-# => true
-
-developers[developers.length]
-# => nil
-# What index are we accessing? Why is it nil?
-
-developers[-5]
-# => nil
-
-developers[-3, 3]
-# => ["Joel", "Julia", "Adam"]
-# *Note* the optional 2nd argument. What do the docs say about this?
-# https://ruby-doc.org/core-2.5.0/Array.html#method-i-5B-5D
-
-developers[-2, 2]
-# => ["Julia", "Adam"]
-
-developers[-5] = 'Kira'
-# IndexError: index -5 too small for array; minimum: -4
-
-developers[developers.length] = 'Kira'
-# => "Kira"
-# To what index are we assigning?
-
-```
-
-## Adding and Removing Elements from Both ends of an Array
-
-### Code Along: Let's Explore
-
-- [Array#push](https://ruby-doc.org/core-2.6.3/Array.html#method-i-push):  Append (put element at end), also available through the
-_alias_, [<<](https://ruby-doc.org/core-2.6.3/Array.html#method-i-3C-3C)
-- [Array#pop](https://ruby-doc.org/core-2.6.3/Array.html#method-i-pop): Remove from end of array
-- [Array#unshift](https://ruby-doc.org/core-2.6.3/Array.html#method-i-unshift): Prepend (put element at beginning)
-- [Array#shift](https://ruby-doc.org/core-2.6.3/Array.html#method-i-shift): Remove from beginning
-
-```rb
-developers << 'Kosta'
-# => ['Caleb', 'Joel', 'Julia', 'Adam', 'Kira', 'Kosta']
-
-developers.push 'Rick'
-# => ['Caleb', 'Joel', 'Julia', 'Adam', 'Kira', 'Kosta', 'Rick']
-
-developers << 'Johnathan' << 'Peter'
-# => ['Caleb',
-#   'Joel',
-#   'Julia',
-#   'Adam',
-#   'Kira',
-#   'Kosta',
-#   'Rick',
-#   'Johnathan',
-#   'Peter']
-
-developers.pop
-# 'Peter'
-
-developers.shift 4
-# => ['Caleb', 'Joel', 'Julia', 'Adam']
-
-developers
-# => ['Kira', 'Kosta', 'Rick', 'Johnathan', 'Peter']
-
-developers.unshift 'Guillermo'
-# => ['Guillermo', 'Kira', 'Kosta', 'Rick', 'Johnathan', 'Peter']
-```
-
-<br>
-
-### Hashes
-
-In Ruby, "A Hash is a dictionary-like collection of unique keys and their
-values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.5.0/Hash.html)
-are not the most general object in the language, but are instances of a
-specialized class for key/value storage.
-
-
-
-A Ruby hash acts somewhat like a dictionary (or object) in JavaScript, in
-that it consists of pairs of keys and values.
-
-```ruby
-
-dict = {}
-=> {}
-
-dict["a"] = 23
-=> 23
-
-dict["a"]
-=> 23
-```
-
-However, there are a couple of important differences. For instance, Ruby
-hashes do not allow you to access their keys through a dot notation; you
-*must* use square braces. When you use a `.`, ruby thinks you are calling a method on an object.
-
-We can also define a hash with keys and values already in it:
-
-```ruby
-nums = {
-  "odds"  => [1, 3, 5],
-  "evens" => [2, 4, 6]
-}
-```
-
-In the example above, our hash has the keys `"odds"` and `"evens"` in quotes,
-which map to values `[1, 3, 5]` and `[2, 4, 6]` respectively. We use the
-hash rocket symbol here (or Fat Arrow) to link our keys to their values.
-
-Ruby has another way to define keys and values in hash:
-
-```ruby
-nums = {
-  "odds": [1, 3, 5],
-  "evens": [2, 4, 6]
-}
-```
-**One gotcha with the above** is that the above syntax turns the keys into _symbols_, so you will have to access your keys using `nums[:odds]`, even though you typed the keys as strings! Symbols are a special kind of String that start with a colon (`:`), and Ruby often uses these internally.
-
-So, the above syntax is equivalent to a third way you could define key value pairs within a hash:
-
-```ruby
-nums = {
-  :odds => [1, 3, 5],
-  :evens => [2, 4, 6]
-}
-```
-
-Whenever you need to see what the keys and values are in your hash, just print it out to the console using `p nums` within your code, or just typing `nums` within the Pry repl. When in doubt, log it out!
-
-## Ruby Symbols
-
-A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of
-characters that is stored, at most, once in any instance of the Ruby interpreter.
-
-In Ruby, strings are compared a character at a time, but symbols are compared
-by `object_id`.  This makes comparing symbols fast and therefore much more
-performant than strings when used as keys in a `Hash`.
-
-### Demo: Test Equivalency
-
-Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
-
-```rb
-'bob'.equal? 'bob'
-# => false
-
-'bob' == 'bob'
-# => true
-
-'bob'.object_id == 'bob'.object_id
-# => false
-
-:bob.equal? :bob
-# => true
-
-:bob == :bob
-# => true
-
-:bob.object_id == :bob.object_id
-# => true
-```
-
-Remember that everything is an object in Ruby, so everything has its own
-`object_id`. Each string of `'bob'` gets a different `object_id`, but the
-symbol `:bob` will always have the same `object_id`.
-
-## Creating Ruby Hashes
-
-Let's look at different ways to create a Hash and then add some key value pairs
-to it.
-
-### Demo: Hash Creation
-
-```rb
-apartment = {}
-# => {}
-
-apartment = Hash.new
-# => {}
-
-apartment = Hash.new('')
-# => {}
-
-apartment[:address]
-# => ""
-
-apartment[:address] = { street: '255 Long Road', city: 'Awesomeville' }
-# => {:street=>"255 Long Road", :city=>"Awesomeville"}
-
-apartment[:bedrooms] = 3
-# => 3
-
-priced_apartment = apartment.merge(rent: 1000)
-# => {:address=>{:street=>"255 Long Road", :city=>"Awesomeville"}, :bedrooms=>3, :rent=>1000}
-```
-
-Picking sensible defaults may not always be easy.
-
-### Lab: Hash Literal
-
-In `ruby.rb`, assign a hash using the literal syntax to the
-variable `apartment`. Then, assign the keys `:sq_ft` and `:pets_allowed`,
-each with a type-appropriate value of your choice. Finally, assign a default
-value of `[]` to the hash and make sure that accessing non-existing keys return
-the default value.
-
-## Assigning and Accessing Elements in a Ruby Hash
-
-### Demo: Accessing, Modifying, and Deleting
-
-```rb
-priced_apartment[:occupants] = []
-# => []
-
-lee = { name: 'Lee', age: 24, dog: 'Fluffy' }
-# => {:name=>"Lee", :age=>24, :dog=>"Fluffy"}
-
-adrian = { name: 'Adrian', age: 25, cat: 'Scratchy' }
-# => {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}
-
-priced_apartment[:occupants].push(lee, adrian)
-# => [{:name=>"Lee", :age=>24, :dog=>"Fluffy"},
-# {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}]
-
-priced_apartment[:occupants][1].delete(:cat)
-# => "Scratchy"
-
-priced_apartment[:rent] += 150
-# => 1150
-```
-
-### Lab: Appending
-
-Create an `:occupants` key with the value of `[]` to the `apartment` hash in
-`ruby.rb`. Add roommate Bo to `:occupants`. Append one or more
-properties of your choosing to the roommate hash, such as `:job` or
-`:education`.
-
-### Demo: Hash Keys
-
-To get an Array of the keys that have been set in a hash, use `Hash#keys`.
-
-```rb
-priced_apartment.keys
-# => [:address, :bedrooms, :occupants, :rent]
-```
-
-### Demo: Hash as Final Argument to Method
-
-If the last argument to a method is a hash, you may omit the curly braces.
-
-```rb
-[].push 4, 'hi', first_name: 'sam', last_name: 'allen'
-# => [4, "hi", {:first_name=>"sam", :last_name=>"allen"}]
-```
-
-### Lab: FizzBuzz with Hashes
-
-Time to recreate the classic FizzBuzz problem with hashes!
-
-Inside `fizzbuzz.rb`, create a hash containing keys `"fizz"`, `"buzz"`,
-`"fizzbuzz"`, and `"other"`, each with arrays as values. As you iterate through
-all the numbers from 1 to `max_num`, add each number to one of the arrays
-mentioned above; numbers divisible by 3 *only* should go into the `"fizz"`
-array, numbers divisible by 5 *only* should go into the ``"buzz"`` array,
-numbers divisible by both should go into the `"fizzbuzz"` array, and numbers
-divisible by neither should go into the `"other"` array. Finally, once you're
-done, return the hash as the result of `fizzbuzz`.
-
-Run your code from the console using `ruby fizzbuzz.rb`.
-
-<br>
-<br>
-<hr>
 <img src="https://memeshappen.com/media/created/2019/05/Ruby-You-rock.jpg" width="500px">
 
 ## Common Gotchas When Learning Ruby After JavaScript
