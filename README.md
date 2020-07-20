@@ -505,6 +505,7 @@ In the case of the method above, `square?` will return the value of that last
 expression, `Math.sqrt(num).to_i**2 == num`.
 
 <br>
+
 ### Lab: Fizzbuzz Method
 
 Take your code from the previous exercise and turn it into a method called
@@ -523,6 +524,7 @@ Once you're finished writing your method, run the program with
 `ruby fizzbuzz.rb`.
 
 Does your code work like you'd expect?
+
 
 <img src="https://memeshappen.com/media/created/2019/05/Ruby-You-rock.jpg" width="500px">
 
