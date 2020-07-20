@@ -525,6 +525,9 @@ Once you're finished writing your method, run the program with
 
 Does your code work like you'd expect?
 
+<br>
+<hr>
+
 
 <img src="https://memeshappen.com/media/created/2019/05/Ruby-You-rock.jpg" width="500px">
 
