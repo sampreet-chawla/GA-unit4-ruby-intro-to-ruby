@@ -244,7 +244,7 @@ To see all the methods that strings have in Ruby, open up your `ruby.rb`, `put` 
 followed by a `.methods`, an run your file; 
 
 ```ruby
-put "Madeline".methods`
+puts "Madeline".methods`
 ```
 
 Alternatively, you can call
