@@ -6,10 +6,6 @@
 
 ## Ruby :: Collections
 
-<img src="https://lh3.googleusercontent.com/proxy/MKT-bw3CCArd__Z_lqmcXtsFV2o_EoHvQgNFM_4VpQHnUUeF13MfoIT9rJiDf2aI0y1_" width="500px">
-
-<br>
-
 ### Arrays
 
 
