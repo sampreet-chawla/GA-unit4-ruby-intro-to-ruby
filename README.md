@@ -82,9 +82,9 @@ You ran your first ruby file!
 - functions in ruby don't need parentheses
 
 ```ruby
-puts('hi'); #JavaScript way
+puts('hi')
 puts 'hi'
-p 'hi' #shorter syntax
+p 'hi' # shortest syntax and shows the datatype
 ```
 
 `puts` is used most often.
