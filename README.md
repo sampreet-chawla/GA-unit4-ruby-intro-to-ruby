@@ -70,9 +70,6 @@ extremely useful to consult the documentation.
 
 You ran your first ruby file!
 
-<br>
-<br>
-
 ## Ruby :: Working with the terminal
 
 ## Logging in Ruby
