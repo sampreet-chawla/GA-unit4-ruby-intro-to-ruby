@@ -76,11 +76,8 @@ You ran your first ruby file!
 
 The equivalent of `console.log()` in JS is `puts` in Ruby
 
-
 ```ruby
 puts('hi')
-puts 'hi'
-p 'hi' # shortest syntax and shows the datatype
 ```
 
 But one of the best parts about Ruby is that functions in ruby don't need parentheses...say what!!
@@ -90,7 +87,8 @@ puts 'hi'
 ```
 
 ### What is the difference between `puts` and `p`
-`p vs puts vs print`
+
+What you will soon find out is that Ruby provides many methods that do essentially the same thing or just slightly different. That is true for `p` vs `puts` vs `print`
 
 - `p` calls `.inspect` on an element, which will display it with all its information including quotes, if it is a string.
 - `puts` just prints the element (without extra information) and like `p`, includes a newline char `\n`
@@ -99,7 +97,6 @@ puts 'hi'
 ## `gets`
 
 You can get input from a user in the console using gets.
-
 
 ```ruby
 some_var = gets
