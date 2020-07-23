@@ -51,8 +51,8 @@ features to cover. These include:
 
 ## Foreword
 
-The depth and breadth of the [Ruby Core](https://ruby-doc.org/core-2.6.3/) and
-[Standard Library](https://ruby-doc.org/stdlib-2.6.3/) are so extensive that
+The depth and breadth of the [Ruby Core](https://ruby-doc.org/core-2.7.1/) and
+[Standard Library](https://ruby-doc.org/stdlib-2.7.1/) are so extensive that
 we'll always want to check them before building something ourselves.  The
 official Ruby docs are our friends, and we should use them liberally.  Over
 time, we'll learn to remember the more common methods, but even then it can be
