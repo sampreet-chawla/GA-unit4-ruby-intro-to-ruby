@@ -12,7 +12,7 @@ our task is simpler than it was when we introduced JS. Instead of teaching you
 how to program, we'll focus on the *differences* between Ruby and JS with the
 goal of utilizing the foundation we've already built.
 
-"Polyglot" is a term used to refer to someone who can use two or more
+`Polyglot` is a term used to refer to someone who can use two or more
 programming languages. By learning two languages, we increase your understanding
 of basic programming concepts, as well as give you an edge in the job market.
 
