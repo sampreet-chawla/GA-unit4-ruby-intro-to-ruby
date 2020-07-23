@@ -70,8 +70,6 @@ extremely useful to consult the documentation.
 
 You ran your first ruby file!
 
-<img src="https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif" alt="ruby" width="300px" >
-
 <br>
 <br>
 
