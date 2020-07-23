@@ -73,8 +73,9 @@ You ran your first ruby file!
 ## Ruby :: Working with the terminal
 
 ## Logging in Ruby
-- The equivalent of console.log() is `puts`
-- functions in ruby don't need parentheses
+
+The equivalent of `console.log()` in JS is `puts` in Ruby
+
 
 ```ruby
 puts('hi')
@@ -82,7 +83,11 @@ puts 'hi'
 p 'hi' # shortest syntax and shows the datatype
 ```
 
-`puts` is used most often.
+But one of the best parts about Ruby is that functions in ruby don't need parentheses...say what!!
+
+```ruby
+puts 'hi'
+```
 
 ### What is the difference between `puts` and `p`
 `p vs puts vs print`
