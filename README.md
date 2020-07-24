@@ -9,7 +9,7 @@ predicting execution by evaluating expressions in your mind.
 We'll continue to reinforce the basics of programming, but this time with Ruby.
 This may seem like a lot of material to cover in a short time, but the truth is
 our task is simpler than it was when we introduced JS. Instead of teaching you
-how to program, we'll focus on the *differences* between Ruby and JS with the
+how to program, we'll focus on the _differences_ between Ruby and JS with the
 goal of utilizing the foundation we've already built.
 
 `Polyglot` is a term used to refer to someone who can use two or more
@@ -22,7 +22,6 @@ you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
 as reading material, but as a handy place to define and experiment with the
 basics of Ruby.
 
-
 ## Objectives
 
 By the end of this, developers should be able to:
@@ -31,6 +30,12 @@ By the end of this, developers should be able to:
 - List and use common operators in Ruby.
 - Identify operators in an expression and explain what they do.
 
+## Preparation
+
+_Before this lesson, students should:_
+
+- Be comfortable with Javascript
+- Have Ruby installed
 
 ## Outline
 
@@ -49,18 +54,50 @@ features to cover. These include:
 - Type coercion.
 - Logic, shortcut evaluation, and operator precedence.
 
+## What is Ruby?
+
+[Ruby](https://www.ruby-lang.org/en/about/) is a high-level programming language that gives us a lot of nice features out of the box.
+
+Ruby is object-oriented: every value is an object, including classes and instances of types that many other languages designate as primitives (such as integers, booleans, and "null"). Variables always hold references to objects. Every function is a method and methods are always called on an object.
+
+It is meant to be pretty, unobtrusive, and super readable.
+
+Ruby does **not** run in the browser. It is most commonly used for backend web development with frameworks like [Sinatra](http://www.sinatrarb.com/) and [Rails](http://rubyonrails.org/).
+
+## What's Ruby like?
+
+### M.I.N.A.S.W.A.N.
+
+- "Matz Is Nice And So We Are Nice"
+- Mentality not only applies to how you should treat your fellow developers, but also the philosophy behind Ruby itself.
+- Yukihiro Matsumoto ("Matz") created Ruby to increase developer happiness.
+  He developed Ruby throughout the 90's and has continued to work on the language since. He is now the Chief architect of Ruby at Heroku.
+
+> "Programmers often feel joy when they can concentrate on the creative side of programming, so Ruby is designed to make programmers happy." — Yukihiro "Matz" Matsumoto ![](https://www.azquotes.com/picture-quotes/quote-i-believe-that-the-purpose-of-life-is-at-least-in-part-to-be-happy-based-on-this-belief-yukihiro-matsumoto-102-79-90.jpg)
+
+### A **Natural** Language
+
+While it isn't exactly simple, a lot of its features are going to feel intuitive.
+
+> "Ruby is simple in appearance, but is very complex inside, just like our human body." — Yukihiro "Matz" Matsumoto
+
+## Running Ruby
+
+Just run `ruby FILENAME.rb`. We can also run ruby commands from the terminal using repl's like [`pry`](http://pryrepl.org/) or [`irb`](https://www.tutorialspoint.com/ruby/interactive_ruby.htm), which is the official ruby repl but `pry` is much better
+
 ## Foreword
 
 The depth and breadth of the [Ruby Core](https://ruby-doc.org/core-2.7.1/) and
 [Standard Library](https://ruby-doc.org/stdlib-2.7.1/) are so extensive that
-we'll always want to check them before building something ourselves.  The
-official Ruby docs are our friends, and we should use them liberally.  Over
+we'll always want to check them before building something ourselves. The
+official Ruby docs are our friends, and we should use them liberally. Over
 time, we'll learn to remember the more common methods, but even then it can be
 extremely useful to consult the documentation.
 
 ## Creating and running a ruby file
+
 - Create a file called `ruby.rb`
-- Open this file in your text editor and write 
+- Open this file in your text editor and write
 
   ```ruby
   puts("hello World")
@@ -94,54 +131,19 @@ What you will soon find out is that Ruby provides many methods that do essential
 - `puts` just prints the element (without extra information) and like `p`, includes a newline char `\n`
 - `print` also just prints, but does not include a newline char.
 
-## `gets`
-
-You can get input from a user in the console using gets.
-
-```ruby
-some_var = gets
-puts some_var
-```
-<br>
-
 ## Ruby :: Core Syntax, Variables, and Operators
 
-### Numbers
+### What is a variable in Ruby?
 
-Numbers in Javascript compared to Ruby are very similar with some small
-differences.
+A variable is an identifier that is assigned to an object, and which may hold a value. Ruby uses duck typing, which is a kind of dynamic typing. If a value behaves or acts like a certain type (duck), such as an integer, Ruby gives it a context and treats it as such (it’s probably a duck).
 
-In Javscript there was really only one official type of number, but in Ruby
-there is a different type if a number is a whole _integer_ (no decimals) or
-a _float_ (contains decimals).
-
-Integers: `1`, `23`, and `-10000`
-Decimals: `3.14`, `-808.08` and `12.043e-04`
-
-Commas are not allowed in numbers, but underscores are. So if you feel the
-need to mark your thousands so the numbers are more readable,
-use an underscore.
-
-`population = 12_000_000_000`
-
-<br>
-
-### Semicolons
-
-In Ruby, there is a conspicuous lack of semicolons.
+## Examples:
 
 ```ruby
-a = 1
-puts(a)
+welcome = 'Welcome to Ruby Programming' # => String
+one     = 1 # => Integer
+price   = 10.25 # => Float
 ```
-
-The end of a line (almost always) marks the end of an expression; semicolons
-are only required if you have two distinct expressions on one line
-(e.g. `name = "Antony"; height_in_feet = 6`). The most likely place where you might
-spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
-used *very* infrequently in Ruby.
-
-<br>
 
 ### Variable Declaration
 
@@ -156,7 +158,7 @@ puts a
 ```
 
 However, this only works if we assign the variable a value. Why? Because
-otherwise, Ruby will default to trying to *evaluate* your variable, and because
+otherwise, Ruby will default to trying to _evaluate_ your variable, and because
 you haven't defined it yet, Ruby will throw an error.
 
 ```ruby
@@ -177,24 +179,94 @@ and they work in (mostly) similar ways.
 
 We will talk about this later.
 
-<br>
+### Parallel Variable Assignment
+
+With parallel assignment, you can assign several values to several variables in a single expression, based on order. A list of variables, separated by commas, can be placed to the left of the equals sign, with the list of values to assign them on the right. Here are a few examples:
+
+```ruby
+name, grade, gpa = 'Suresh', 89, 3.6
+a, b, c = "cash", 1.99, 100
+```
+
+### Numbers
+
+Numbers in Javascript compared to Ruby are very similar with some small
+differences.
+
+In Javscript there was really only one official type of number, but in Ruby
+there is a different type if a number is a whole _integer_ (no decimals) or
+a _float_ (contains decimals).
+
+- Integers: `1`, `23`, and `-10000`
+- Decimals: `3.14`, `-808.08` and `12.043e-04`
+
+Numbers in Ruby are in the [`Numeric`](https://ruby-doc.org/core-2.5.1/Numeric.html) class. It's subclasses include [`Integer`](https://ruby-doc.org/core-2.5.1/Integer.html) and [`Float`](https://ruby-doc.org/core-2.5.1/Float.html)
+
+```ruby
+1.class
+ => Integer
+1.0.class
+ => Float
+1+1
+ => 2
+3-1
+ => 2
+3*3
+ => 9
+10/2
+ => 5
+1 / 2
+ => 0 # (rounds down)
+1 / 2.0
+ => 0.5 # (does not round float)
+2.next
+ => 3 # (.next provides the next integer value)
+2.pred
+ => 1 # (.pred provides the preceding integer value)
+2.lcm(3)
+ => 6 # (.lcm gives us the least common multiple of the integer to which the method is applied and the value passed)
+2.gcd(3)
+ => 1 # (.gcd provides the greatest common divisor of the integer to which the method is applied and the value passed)
+```
+
+There are a number of methods available for the integer class, which you can play around with. Simply check them by using .methods on the integer.
+
+```ruby
+2.methods
+
+ => [:-@, :**, :<=>, :upto, :<<, :<=, :>=, :==, :chr, :===, :>>, :[], :%, :&, :inspect, :*, :+, :ord, :-, :/, :size, :succ, :<, :>, :to_int, :coerce, :to_s, :to_i, :to_f, :divmod, :to_r, :fdiv, :modulo, :remainder, :abs, :magnitude, :integer?, :floor, :ceil, :round, :truncate, :^, :odd?, :even?, :allbits?, :anybits?, :nobits?, :downto, :times, :pred, :pow, :bit_length, :digits, :numerator, :denominator, :rationalize, :gcd, :lcm, :gcdlcm, :next, :div, :|, :~, :imag, :abs2, :+@, :phase, :to_c, :polar, :angle, :conjugate, :conj, :eql?, :singleton_method_added, :i, :real?, :zero?, :nonzero?, :finite?, :infinite?, :step, :positive?, :negative?, :clone, :dup, :arg, :quo, :rectangular, :rect, :real, :imaginary, :between?, :clamp, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :instance_variable_set, :protected_methods, :instance_variables, :instance_variable_get, :private_methods, :public_methods, :public_send, :method, :public_method, :singleton_method, :define_singleton_method, :extend, :to_enum, :enum_for, :=~, :!~, :respond_to?, :freeze, :object_id, :send, :display, :nil?, :hash, :class, :singleton_class, :itself, :yield_self, :then, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :equal?, :!, :instance_exec, :!=, :instance_eval, :__id__, :__send__]
+```
+
+### Semicolons
+
+In Ruby, there is a conspicuous lack of semicolons.
+
+```ruby
+a = 1
+puts(a)
+```
+
+The end of a line (almost always) marks the end of an expression; semicolons
+are only required if you have two distinct expressions on one line
+(e.g. `name = "Antony"; height_in_feet = 6`). The most likely place where you might
+spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
+used _very_ infrequently in Ruby.
 
 ### Operators
 
 In Ruby, everything is an expression - a statement composed of a combination
 of operands (data) and operations. In JavaScript, things like `+` and `-` are
-*true operators* - keywords built into the language itself, and imbued with
-fixed, unchangeable meanings. In Ruby, in contrast, most "operators" you
+_true operators_ - keywords built into the language itself, and imbued with
+fixed, unchangeable meanings.
+
+In Ruby, by contrast, most "operators" you
 encounter are actually method calls on some object; the main exceptions
 are assignment operators (e.g. `=`), logical operators
 (e.g. `||`, `&&`, `!`), and control flow operators (e.g. `and`, `or`, `not`).
 
-<br>
-
 #### Brief Aside: Syntactic Sugar
 
-Ruby doesn't have an increment operator, either pre (`++i`) or post (`i++`).
-Use `+=` instead.
+Ruby doesn't have an increment operator, either pre (`++i`) or post (`i++`) so use `+=` instead.
 
 ```ruby
 counter = 0
@@ -212,9 +284,10 @@ counter
 
 `counter += 1` is really just Ruby making you type fewer characters to
 accomplish `counter = counter + 1`. This is commonly referred to as
-'syntactic sugar' - when a programming language has syntax that's deliberately
-designed to make code shorter/more semantic/easier to write. Ruby has a *ton*
-of syntactic sugar. [JavaScript allows us to use this shorthand for assignment too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators).
+`syntactic sugar` - when a programming language has syntax that's deliberately
+designed to make code shorter/more semantic/easier to write.
+
+Ruby has a _ton_ of syntactic sugar. [JavaScript allows us to use this shorthand for assignment too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators).
 Just like with JavaScript and other languages, you can combine assignment with many
 different operators like `*`, `-`, and even `||`.
 
@@ -233,12 +306,52 @@ counter -= 1           # counter = counter - 1
 => 4
 ```
 
-<br>
-
 ## Ruby :: Strings
 
-To see all the methods that strings have in Ruby, open up your `ruby.rb`, `put` a string
-followed by a `.methods`, an run your file; 
+A string is a series of text characters. You can use strings to hold names, email addresses, phone numbers, and a million other things. Ruby’s strings are special because even very large strings are highly efficient to work with (this isn’t true in many other languages).
+
+The easiest way to specify a string is to surround it either with double quotes (") or single quotes ('). The two types of quotes work a little differently
+
+Single-quoted strings are referred to as
+_'string literals'_; they interpret their contents as a literal sequence
+of characters, with only two recognized escape sequences - `\'` and `\\`.
+In contrast, double-quoted strings (" ") support a much wider variety of escape
+characters, including `\n` (new line), `\t` (tab), and `\s` (space); if `\n`
+appeared in a single-quoted string, it would be interpreted as the
+character `\` followed by the character `\n`, rather than a new line.
+
+```ruby
+'it\'s a great day' => "it's a great day"
+
+"it\'s a great day" => "it's a great day"
+```
+
+But try using \n (new line) character and we are forced to use double quotes
+
+```ruby
+str = 'hello \n world'
+puts str
+
+SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
+str = 'hello \n world'
+       ^~~~~
+```
+
+```ruby
+str = "hello \nworld"
+=> "hello \nworld"
+
+puts str
+hello
+world
+```
+
+### String Methods
+
+Strings in Ruby are derived from the String class, and there are over 100 methods to manipulate and operate on strings. This is perhaps because, in programming, a lot revolves around strings, and Ruby reduces the headache by managing a lot out of the box.
+
+To see all the methods that strings have in Ruby in your `ruby.rb` file, `put` a string
+followed by `.methods`, and run your file;
 
 ```ruby
 puts "Madeline".methods`
@@ -248,25 +361,115 @@ Alternatively, you can call
 `"some string".methods.sort` for a full list. And, of course, the Ruby documentation
 has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 
-Strings objects come with several conversion methods that all start `to_` and
-then a letter or abbreviation hinting at what conversion they perform.
+### There are several methods for querying the length of a string:
+
+```ruby
+s.length # => 5: counts characters in 1.9, bytes in 1.8
+s.size # => 5: size is a synonym
+s.bytesize # => 5: length in bytes; Ruby 1.9 only
+s.empty? # => false
+"".empty? # => true
+```
+
+### Finding the position of a substring or pattern match
+
+- String methods for searching a string and for replacing content include the following:
+
+```ruby
+s = "hello"
+s.index('l') # => 2: index of first l in string
+s.index(?l) # => 2: works with character codes as well
+s.index(/l+/) # => 2: works with regular expressions, too
+s.index('l',3) # => 3: index of first l in string at or after position 3
+s.index('Ruby') # => nil: search string not found
+s.rindex('l') # => 3: index of rightmost l in string
+s.rindex('l',2) # => 2: index of rightmost l in string at or before 2
+```
+
+### Checking for prefixes and suffixes
+
+```ruby
+s.start_with? "hell" # => true. Note singular "start" not "starts"
+s.end_with? "bells" # => false
+```
+
+### Testing for presence of substring
+
+```ruby
+s.include?("ll") # => true: "hello" includes "ll"
+s.include?(?H) # => false: "hello" does not include character H
+```
+
+### Pattern matching with regular expressions
+
+```ruby
+s =~ /[aeiou]{2}/ # => nil: no double vowels in "hello"
+s.match(/[aeiou]/) {|m| m.to_s} # => "e": return first vowel
+```
+
+### Splitting a string into substrings based on a delimiter string or pattern
+
+```ruby
+"this is it".split # => ["this", "is", "it"]: split on spaces by default
+"hello".split('l') # => ["he", "", "o"]
+"1, 2,3".split(/,\s*/) # => ["1","2","3"]: comma and optional space delimiter
+```
+
+### Split a string into two parts plus a delimiter
+
+- These methods always return arrays of 3 strings:
+
+```ruby
+"banana".partition("an") # => ["b", "an", "ana"]
+"banana".rpartition("an") # => ["ban", "an", "a"]: start from right
+"a123b".partition(/\d+/) # => ["a", "123", "b"]: works with Regexps, too
+```
+
+### Some additional useful string methods
+
+```ruby
+s = "hello"
+s.concat(" world") # Synonym for <<. Mutating append to s. Returns new s
+s.insert(5, " there") # Same as s[5] = " there". Alters s. Returns new s
+s.slice(0,5) # Same as s[0,5]. Returns a substring
+s.slice!(5,6) # Deletion. Same as s[5,6]="". Returns deleted substring
+s.eql?("hello world") # True. Same as ==
+```
+
+### Interpolation
+
+To interpolate strings in Ruby, you must use double quotes.
+
+```ruby
+"I have #{13 * 4} cards" # => "I have 52 cards"
+'I have #{13 * 4} cards' # => 'I have #{13 * 4} cards'
+```
+
+### Concatenation
+
+You can also concatenate strings but this is NOT recommend
+
+```ruby
+'foo' + 'bar' # => 'foobar'
+'foo' + 2 # => TypeError: no implicit conversion of Integer into String
+'foo' + 2.to_s # => 'foo2'
+```
+
+Above we see that we can NOT implicitly convert a non-string into a string (unlike what we have seen in JS).
+
+String objects come with several conversion methods that all start `to_` and
+then a letter or abbreviation hinting as to what conversion they perform.
+
 `to_i` and `to_f` are used commonly - these convert the string into one of two
-types of numbers, *integers* (whole numbers) and *floats* (decimal numbers).
+types of numbers, _integers_ (whole numbers) and _floats_ (decimal numbers).
 
-### String Interpolation
+```ruby
+21.10.to_i
+=> 21
 
-Ruby attributes different meanings to single-quoted and
-double-quoted strings. Single-quoted strings are referred to as
-*'string literals'*; they interpret their contents as a literal sequence
-of characters, with only two recognized escape sequences - `\'` and `\\`.
-In contrast, double-quoted strings (" ") support a much wider variety of escape
-characters, including `\n` (new line), `\t` (tab), and `\s` (space); if `\n`
-appeared in a single-quoted string, it would be interpreted as the
-character `\` followed by the character `\n`, rather than a new line.
-
-One neat thing that comes out of this is the ability to do
-*string interpolation*, inserting variables directly into the middle of a
-string.
+21.to_f
+=> 21
+```
 
 Ruby doesn't implicitly convert numbers to strings, so all those
 string conversions need to be done manually using `.to_s`.
@@ -288,55 +491,44 @@ puts name + " is " + height_in_feet.to_s + " feet tall."
 => "Lauren is 5 feet tall."
 ```
 
-Fortunately, Ruby does give us an alternative - at least with double-quoted
-strings. If the sequence `#{ ... }` appears inside a double-quoted string,
-Ruby will replace it with the value of the expression inside the curly braces,
-converted to a string.
+### Booleans
 
-So instead of:
+Of course Ruby has two booleans `true` and `false`
 
-```ruby
-name = "Lauren"
-=> "Lauren"
-
-height_in_feet = 5
-=> 5
-
-name + " is " + height_in_feet.to_s + " feet tall."
-=> "Lauren is 5 feet tall."
-```
-
-We can use:
+Each object has a `==` method that compares to another object.
 
 ```ruby
-
-name = "Lauren"
-=> "Lauren"
-
-height_in_feet = 5
-=> 5
-
-"#{name} is #{height_in_feet} feet tall."
-=> "Lauren is 5 feet tall."
+1 == 1 # => true
+1 == '1' # => false
+1 == 1.0 # => true
+[1, 2] == [1, 2] # => true
+[1, 2] == [2, 1] # => false
+{a: 1, b: 2} == {b: 2, a: 1} # => true
 ```
 
-This also works:
+> Do NOT use `===`. This is not the same as what it means in JS.
+
+### Truthy and Falsy
+
+Ruby only has **two** falsy values: `nil` and `false`.
+
+So unlike JS `0` and `''` are truthy. (There is no `null`, `undefined`, `NaN`, `-0`)
 
 ```ruby
+!! false # => false
+!! nil # => false
 
-"ten + seven == #{10 + 7}"
-=> "ten + seven == 17"
+!! 0 # => true
+!! '' # => true
 ```
-<br>
-<br>
 
 ## Ruby :: Flow Control
 
-<img src="https://i.giphy.com/media/h8y265b9iKtzKT0pDj/giphy.webp" width="600px">
-
-
+<!-- <img src="https://i.giphy.com/media/h8y265b9iKtzKT0pDj/giphy.webp" width="600px"> -->
 
 ### Conditionals
+
+Every language has them and Ruby is no different but with Ruby we can leave out a few characters that were required in JS.
 
 ```ruby
 # Ruby version
@@ -363,8 +555,7 @@ differences are:
   keyword in Ruby, appearing at the end of pretty much any contiguous section of
   code.
 
-`unless` can sometimes be used to replace an `if` with a negated test and no
-`elsif` or `else`.
+Another options to use for a conditional is `unless` which can replace `if` with a negated test and no `elsif` or `else`.
 
 ```ruby
 if !(name == "Jason")
@@ -392,10 +583,9 @@ while i < 10 do
 end
 ```
 
-The `do ... end`
- is a common construction in Ruby because it specifies what's known as a
- **block**, a grouping of several lines of code. We'll learn more about
- blocks soon.
+The `do ... end` is a common construction in Ruby because it specifies what's known as a
+**block**, a grouping of several lines of code. We'll learn more about
+blocks soon.
 
 `for` loops in Ruby exist, but are not commonly used. Instead, we use the
 [upto](https://ruby-doc.org/core-2.6.3/Integer.html#method-i-upto) enumerator.
@@ -419,11 +609,61 @@ end
 
 What do you expect to print? What does print?
 
+## Ruby :: Methods
+
+Ruby draws no distinction between functions that are properties of objects and
+functions that aren't; in Ruby, all of them are called 'methods'.
+
+To define a method, you use the following syntax:
+
+```ruby
+def square (num)
+  Math.sqrt(num).to_i**2 == num
+end
+```
+
+Ruby methods use an _implicit return_ - by default, they will return the value
+of the last expression evaluated (which may or may not be a return expression).
+
+However, Ruby does also have a `return` keyword which, as it does in
+JavaScript, immediately terminates the function/method and sends back a value.
+In the case of the method above, `square?` will return the value of that last
+expression, `Math.sqrt(num).to_i**2 == num`.
+
+A method can also include a question mark, which is by convetion only and indicates that the method will return a boolean.
+
+```ruby
+def square? (num)
+  Math.sqrt(num).to_i**2 == num
+end
+```
+
+Another
+common convention in Ruby is a trailing exclamation point, which indicates that
+a method is a 'mutator' - this means that the method changes the object that
+it is called from, rather than returning a new object.
+
+> This behavior is also sometimes referred to as operating 'in place'.
+
+```ruby
+string = 'hello'
+=> "hello"
+
+string.upcase!
+=> "HELLO"
+
+string
+=> "HELLO"
+```
+
 ### Lab: FizzBuzz
 
 Create a new file called `fizzbuzz.rb`.
-In pairs, you're going to solve "FizzBuzz", a simple programming challenge
-based on a childrens' game. 
+
+In pairs, you're going to write a method that will solve "FizzBuzz"
+
+method called
+`fizzbuzz`; this method should accept an argument, `max_num`.
 
 Essentially, your program should print out all of
 the numbers from 1 up to `max_num`, which is a variable to which you can assign
@@ -465,100 +705,69 @@ To run your code, simply navigate to the root of this repository and run
 > modeled off of other console-based runtime environments, as a way of giving
 > JavaScript a solid platform for running on the server side.
 
-<img src="https://i.giphy.com/media/ZVik7pBtu9dNS/giphy.webp" width="500px">
-
-<br>
-<br>
-<br>
-
-## Ruby :: Methods
-
-Ruby draws no distinction between functions that are properties of objects and
-functions that aren't; in Ruby, all of them are called 'methods'.
-
-To define a method, you use the following syntax:
-
-```ruby
-def square? (num)
-  Math.sqrt(num).to_i**2 == num
-end
-```
-
-The question mark is conventional for methods that return a boolean.  
-
-Another
-common convention in Ruby is a trailing exclamation point, which indicates that
-a method is a 'mutator' - this means that the method changes the object that
-it is called from, rather than returning a new object.
-
-> This behavior is also sometimes referred to as operating 'in place'.
-
-Ruby methods use an *implicit return* - by default, they will return the value
-of the last expression evaluated (which may or may not be a return expression).
-
-However, Ruby does also have a `return` keyword which, as it does in
-JavaScript, immediately terminates the function/method and sends back a value.
-In the case of the method above, `square?` will return the value of that last
-expression, `Math.sqrt(num).to_i**2 == num`.
-
-<br>
-
-### Lab: Fizzbuzz Method
-
-Take your code from the previous exercise and turn it into a method called
-`fizzbuzz`; this method should accept an argument, `max_num`.
-
-At the end of your program, add the following line:
-
-```ruby
-
-p fizzbuzz(10)
-
-```
-
-
-Once you're finished writing your method, run the program with
-`ruby fizzbuzz.rb`.
-
-Does your code work like you'd expect?
-
-<br>
-<hr>
-
-
-<img src="https://memeshappen.com/media/created/2019/05/Ruby-You-rock.jpg" width="500px">
-
 ## Common Gotchas When Learning Ruby After JavaScript
 
-- `==` and `===` mean different things between the two languages. In
+### == vs ====
+
+`==` and `===` mean different things between the two languages. In
 JavaScript, `===` is a 'strict equality' comparator, while `==` is a
 'loose equality' comparator; since `==` has some weird exceptions, the
 convention is to almost always use `===`.
 **In Ruby, however, the reverse is true; you should `==` to test for equality,
-and *not* use `===`** (which does something different).
+and _not_ use `===`**
 
-- Use `.equal?` if we *need* to test for identity (two variables that
+Generally, it returns true if the object on the right “belongs to” or “is a member of” the object on the left. For instance, it can be used to test if an object is an instance of a class (or one of its subclasses).
+
+```ruby
+String === "zen"  # Output: => true
+Range === (1..2)   # Output: => true
+Array === [1,2,3]   # Output: => true
+Integer === 2   # Output: => true
+```
+
+### .equal?
+
+Use `.equal?` if we _need_ to test for identity (two variables that
 reference the same object).
 
+```ruby
+a = 'xyz'
+b = 'xyz'
+
+a.equal? b
+=> false
+```
+
+Hmmm...why are they not equal? Any thoughts?
+
+This is because .equal? checks if the two operands refer to the same object. This is the strictest form of equality in Ruby.
+
+```ruby
+a.object_id  # Output: => 20139460
+b.object_id  # Output :=> 19972120
+```
+
+### More Differences
+
 - Ruby has several different numeric types (unlike JavaScript),
-but most operations "do what we expect".
+  but most operations "do what we expect".
 
 - Booleans: Only `false` and `nil` are falsy in Ruby.
-Everything else is truthy.
+  Everything else is truthy.
 
 - We don't need to use parentheses when invoking a method (as we saw above
-with the `+` method - one exception later). But sometimes they add clarity,
-so it can be beneficial to include them.
+  with the `+` method - one exception later). But sometimes they add clarity,
+  so it can be beneficial to include them.
 
 - The Ruby comment character is `#`. Everything following a `#` on a line
-is ignored by the interpreter.
+  is ignored by the interpreter.
 
 - `p`, `puts`, and `print` are not directly analogous to
-console.log but are often used for a similar purpose when writing scripts
-run from the terminal.
+  console.log but are often used for a similar purpose when writing scripts
+  run from the terminal.
 
 - Ruby's convention is to use underscores between words in names (a.k.a.
-'snake_case'). Constants start with a capital letter.
+  'snake_case'). Constants start with a capital letter.
 
 - Ruby doesn't implicitly convert numbers to strings.
 
@@ -572,10 +781,8 @@ run from the terminal.
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
 
-
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
-
+   alternative licensing, please contact legal@ga.co.
