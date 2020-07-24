@@ -137,12 +137,22 @@ What you will soon find out is that Ruby provides many methods that do essential
 
 A variable is an identifier that is assigned to an object, and which may hold a value. Ruby uses duck typing, which is a kind of dynamic typing. If a value behaves or acts like a certain type (duck), such as an integer, Ruby gives it a context and treats it as such (it’s probably a duck).
 
-## Examples:
+#### Examples:
 
 ```ruby
 welcome = 'Welcome to Ruby Programming' # => String
 one     = 1 # => Integer
 price   = 10.25 # => Float
+```
+
+### Casing
+
+- All variables and methods must use snake_case
+- All constants (besides classes and modules) must use SCREAMING_SNAKE_CASE
+
+
+```ruby
+my_first_var = 'hello world'
 ```
 
 ### Variable Declaration
@@ -178,6 +188,7 @@ Ruby has its own set of scoping rules for variables, just like JavaScript does,
 and they work in (mostly) similar ways.
 
 We will talk about this later.
+
 
 ### Parallel Variable Assignment
 
@@ -571,6 +582,30 @@ unless name == "Jason"
 end
 ```
 
+We also have single-line ifs
+
+```ruby
+puts 'you are wise!' if age >= 100
+```
+
+You may even see `unless`
+
+```ruby
+puts 'you are wise!' unless age < 100
+```
+When you see an `unless foo`, read it as `if !foo`
+
+> `if !foo` can always be written as `unless foo` which creates a more readable line
+
+
+#### Ternary operator  
+
+A ternary operator looks just like we have seen in JS
+
+```ruby
+num.even? ? "#{num} is even!" : "#{num} is odd!"
+```
+
 ### Loops
 
 Similarly to `if`, a `while` loop also looks almost the same in Ruby as it does
@@ -597,8 +632,6 @@ We'll learn more about enumerators soon.
 end
 ```
 
-### Code Along: `upto`
-
 In our `ruby.rb` file, let's enter:
 
 ```ruby
@@ -608,6 +641,19 @@ end
 ```
 
 What do you expect to print? What does print?
+
+There are additional looping constructs like .times
+
+```ruby
+3.times do |i| 
+ puts i
+end
+# > 0
+# > 1
+# > 2
+```
+
+> Yes there _are_ `for` loops in Ruby but we DO NOT use them
 
 ## Ruby :: Methods
 
