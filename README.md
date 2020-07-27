@@ -392,8 +392,6 @@ s.empty? # => false
 ```ruby
 s = "hello"
 s.index('l') # => 2: index of first l in string
-s.index(?l) # => 2: works with character codes as well
-s.index(/l+/) # => 2: works with regular expressions, too
 s.index('l',3) # => 3: index of first l in string at or after position 3
 s.index('Ruby') # => nil: search string not found
 s.rindex('l') # => 3: index of rightmost l in string
@@ -407,7 +405,7 @@ s.start_with? "hell" # => true. Note singular "start" not "starts"
 s.end_with? "bells" # => false
 ```
 
-### Testing for presence of substring
+### Testing for presence of substring using a predicate method(?)
 
 ```ruby
 s.include?("ll") # => true: "hello" includes "ll"
@@ -426,7 +424,6 @@ s.match(/[aeiou]/) {|m| m.to_s} # => "e": return first vowel
 ```ruby
 "this is it".split # => ["this", "is", "it"]: split on spaces by default
 "hello".split('l') # => ["he", "", "o"]
-"1, 2,3".split(/,\s*/) # => ["1","2","3"]: comma and optional space delimiter
 ```
 
 ### Split a string into two parts plus a delimiter
