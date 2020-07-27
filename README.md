@@ -49,7 +49,7 @@ features to cover. These include:
 
 - Variable declaration and naming conventions.
 - Strings, interpolation, and concatenation.
-- Methods and functions, including predicates.
+- Methods and functions, including predicates (a method/function that returns true/false)
 - Fixnums, Floats, and Numbers.
 - Falsiness.
 - Flow control.
