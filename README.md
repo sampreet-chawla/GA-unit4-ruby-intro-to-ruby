@@ -347,10 +347,7 @@ But try using \n (new line) character and we are forced to use double quotes
 ```ruby
 str = 'hello \n world'
 puts str
-
-SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
-str = 'hello \n world'
-       ^~~~~
+'hello \n world'
 ```
 
 ```ruby
