@@ -16,6 +16,11 @@ goal of utilizing the foundation we've already built.
 programming languages. By learning two languages, we increase your understanding
 of basic programming concepts, as well as give you an edge in the job market.
 
+Jobs that require both Ruby/Rails & JavaScript:
+- [Big Marker.com - Software Engineer](https://www.indeed.com/viewjob?cmp=BigMarker.com&t=Software+Engineer&jk=eb038dd32447a1c7&sjdu=QwrRXKrqZ3CNX5W-O9jEvRFd8FQI4DEv5V74lSpSnHa_ovrhMHxyws68UyimQSIUzw-QYsQS-BUwPJYPhHWguw&tk=1ee81ru3r41si800&adid=344301318&pub=4a1b367933fd867b19b072952f68dceb&vjs=3)
+- [Edfinity - Full Stack](https://www.indeed.com/viewjob?cmp=Edfinity&t=Full+Stack+Engineer&jk=26ca731ce199d6f1&q=javascript+ruby+rails&vjs=3)
+
+
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
 you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
@@ -44,7 +49,7 @@ features to cover. These include:
 
 - Variable declaration and naming conventions.
 - Strings, interpolation, and concatenation.
-- Methods and functions, including predicates.
+- Methods and functions, including predicates (a method/function that returns true/false)
 - Fixnums, Floats, and Numbers.
 - Falsiness.
 - Flow control.
@@ -342,10 +347,7 @@ But try using \n (new line) character and we are forced to use double quotes
 ```ruby
 str = 'hello \n world'
 puts str
-
-SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
-str = 'hello \n world'
-       ^~~~~
+'hello \n world'
 ```
 
 ```ruby
@@ -375,6 +377,7 @@ has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 ### There are several methods for querying the length of a string:
 
 ```ruby
+s = "hello"
 s.length # => 5: counts characters in 1.9, bytes in 1.8
 s.size # => 5: size is a synonym
 s.bytesize # => 5: length in bytes; Ruby 1.9 only
@@ -389,8 +392,6 @@ s.empty? # => false
 ```ruby
 s = "hello"
 s.index('l') # => 2: index of first l in string
-s.index(?l) # => 2: works with character codes as well
-s.index(/l+/) # => 2: works with regular expressions, too
 s.index('l',3) # => 3: index of first l in string at or after position 3
 s.index('Ruby') # => nil: search string not found
 s.rindex('l') # => 3: index of rightmost l in string
@@ -404,7 +405,7 @@ s.start_with? "hell" # => true. Note singular "start" not "starts"
 s.end_with? "bells" # => false
 ```
 
-### Testing for presence of substring
+### Testing for presence of substring using a predicate method(?)
 
 ```ruby
 s.include?("ll") # => true: "hello" includes "ll"
@@ -423,7 +424,6 @@ s.match(/[aeiou]/) {|m| m.to_s} # => "e": return first vowel
 ```ruby
 "this is it".split # => ["this", "is", "it"]: split on spaces by default
 "hello".split('l') # => ["he", "", "o"]
-"1, 2,3".split(/,\s*/) # => ["1","2","3"]: comma and optional space delimiter
 ```
 
 ### Split a string into two parts plus a delimiter
