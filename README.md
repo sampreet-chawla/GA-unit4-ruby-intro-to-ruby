@@ -16,6 +16,11 @@ goal of utilizing the foundation we've already built.
 programming languages. By learning two languages, we increase your understanding
 of basic programming concepts, as well as give you an edge in the job market.
 
+Jobs that require both Ruby/Rails & JavaScript:
+- [Big Marker.com - Software Engineer](https://www.indeed.com/viewjob?cmp=BigMarker.com&t=Software+Engineer&jk=eb038dd32447a1c7&sjdu=QwrRXKrqZ3CNX5W-O9jEvRFd8FQI4DEv5V74lSpSnHa_ovrhMHxyws68UyimQSIUzw-QYsQS-BUwPJYPhHWguw&tk=1ee81ru3r41si800&adid=344301318&pub=4a1b367933fd867b19b072952f68dceb&vjs=3)
+- [Edfinity - Full Stack](https://www.indeed.com/viewjob?cmp=Edfinity&t=Full+Stack+Engineer&jk=26ca731ce199d6f1&q=javascript+ruby+rails&vjs=3)
+
+
 You will reference this material again and again over the next few weeks. Focus
 on noting the differences between Ruby and JS. You should use this material as
 you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
