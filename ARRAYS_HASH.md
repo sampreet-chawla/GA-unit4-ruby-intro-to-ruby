@@ -36,7 +36,7 @@ my_array
 ## Creating a Ruby Array
 
 As with JavaScript, Ruby Arrays can be created using literals (technically, a
-constructor method on class Array) and with a constructor.
+constructor method on class Array)
 
 ### Demo
 
