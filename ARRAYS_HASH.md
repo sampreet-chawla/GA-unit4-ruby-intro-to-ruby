@@ -295,7 +295,7 @@ priced_apartment = apartment.merge(rent: 1000)
 ### Lab: Hash Literal
 
 In `ruby.rb`, assign a hash using the literal syntax to the
-variable `my_dog`. Then, assign the keys `:name` and `:age`,
+variable `my_pet`. Then, assign the keys `:name` and `:age`,
 each with a type-appropriate value of your choice. 
 
 ## Assigning and Accessing Elements in a Ruby Hash
