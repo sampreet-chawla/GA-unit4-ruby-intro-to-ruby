@@ -360,6 +360,12 @@ done, return the hash as the result of `fizzbuzz`.
 
 Run your code from the console using `ruby fizzbuzz.rb`.
 
+I should look like the following:
+
+```ruby
+{:fizzbuzz=>[15], :fizz=>[3, 6, 9, 12], :buzz=>[5, 10], :other=>[1, 2, 4, 7, 8, 11, 13, 14, 16]}
+```
+
 <br>
 <br>
 <hr>
