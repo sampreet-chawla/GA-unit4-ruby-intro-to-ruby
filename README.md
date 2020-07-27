@@ -266,7 +266,7 @@ The end of a line (almost always) marks the end of an expression; semicolons
 are only required if you have two distinct expressions on one line
 (e.g. `name = "Antony"; height_in_feet = 6`). The most likely place where you might
 spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
-used _very_ infrequently in Ruby.
+used _very_ **infrequently** in Ruby.
 
 ### Operators
 
