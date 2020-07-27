@@ -44,10 +44,6 @@ constructor method on class Array) and with a constructor.
 # literal syntax:
 developers = []
 # => []
-
-# constructor syntax:
-developers = Array.new
-# => []
 ```
 
 With the literal syntax, we can create an array with initial values.
@@ -86,20 +82,21 @@ specific index in an array:
   (Element Assignment)
 
 ```rb
-developers[0] # Are we accessing or assigning at index 0?
+developers[0] # Accessing first element by at index 
 # => "Caleb"
 
-developers[-1]
+arr.first # Accessing the first ellement using method
+# => "Caleb"
+
+developers[-1] # Accessing the last element using -1
 # => "Adam"
 
-developers[-4] == developers[0]
-# => true
+arr.last # Accessing the last ellement using method
+# => "Caleb"
 
-developers[developers.length]
-# => nil
-# What index are we accessing? Why is it nil?
+developers[developers.length-1] # And yet again the last element
 
-developers[-5]
+developers[-5] #No element exists at that position
 # => nil
 
 developers[-3, 3]
@@ -119,11 +116,18 @@ developers[developers.length] = 'Kira'
 
 ```
 
+We can also concatenate arrays
+
+```ruby
+[1, 2, 3] + [4, 5] # => [1, 2, 3, 4, 5]
+# (this is a new array. neither is mutated)
+```
+
 ## Adding and Removing Elements from Both ends of an Array
 
 ### Code Along: Let's Explore
 
-- [Array#push](https://ruby-doc.org/core-2.6.3/Array.html#method-i-push):  Append (put element at end), also available through the
+- [Array#push](https://ruby-doc.org/core-2.6.3/Array.html#method-i-push):  Append (put element at end), also available through the `shovel`
 _alias_, [<<](https://ruby-doc.org/core-2.6.3/Array.html#method-i-3C-3C)
 - [Array#pop](https://ruby-doc.org/core-2.6.3/Array.html#method-i-pop): Remove from end of array
 - [Array#unshift](https://ruby-doc.org/core-2.6.3/Array.html#method-i-unshift): Prepend (put element at beginning)
@@ -274,12 +278,6 @@ to it.
 apartment = {}
 # => {}
 
-apartment = Hash.new
-# => {}
-
-apartment = Hash.new('')
-# => {}
-
 apartment[:address]
 # => ""
 
@@ -297,7 +295,7 @@ priced_apartment = apartment.merge(rent: 1000)
 ### Lab: Hash Literal
 
 In `ruby.rb`, assign a hash using the literal syntax to the
-variable `apartment`. Then, assign the keys `:sq_ft` and `:pets_allowed`,
+variable `my_dog`. Then, assign the keys `:name` and `:age`,
 each with a type-appropriate value of your choice. 
 
 ## Assigning and Accessing Elements in a Ruby Hash
@@ -325,12 +323,9 @@ priced_apartment[:rent] += 150
 # => 1150
 ```
 
-### Lab: Appending
+### Exercise: Appending
 
-Create an `:occupants` key with the value of `[]` to the `apartment` hash in
-`ruby.rb`. Add roommate Bo to `:occupants`. Append one or more
-properties of your choosing to the roommate hash, such as `:job` or
-`:education`.
+In `my_pet` create a `:fav_food` key and set it's value to an empty array. Add a few fav foods to the array as objects that include both `:name` and `:cost` keys.
 
 ### Demo: Hash Keys
 
@@ -380,10 +375,4 @@ Run your code from the console using `ruby fizzbuzz.rb`.
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
 
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
 
