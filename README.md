@@ -377,6 +377,7 @@ has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 ### There are several methods for querying the length of a string:
 
 ```ruby
+s = 'string'
 s.length # => 5: counts characters in 1.9, bytes in 1.8
 s.size # => 5: size is a synonym
 s.bytesize # => 5: length in bytes; Ruby 1.9 only
