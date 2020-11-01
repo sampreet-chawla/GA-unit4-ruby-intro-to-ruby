@@ -12,18 +12,23 @@ our task is simpler than it was when we introduced JS. Instead of teaching you
 how to program, we'll focus on the _differences_ between Ruby and JS with the
 goal of utilizing the foundation we've already built.
 
-`Polyglot` is a term used to refer to someone who can use two or more
-programming languages. By learning two languages, we increase your understanding
-of basic programming concepts, as well as give you an edge in the job market.
+<hr>
 
-Jobs that require both Ruby/Rails & JavaScript:
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 3min
+
+
+Although we are about to make the switch and learn Ruby much of being full stack web developer requires that you continue to develop for the front end which involves JavaScript. 
+
+Let's take a look at a few jobs that require both Ruby/Rails & JavaScript:
+
 - [Big Marker.com - Software Engineer](https://www.indeed.com/viewjob?cmp=BigMarker.com&t=Software+Engineer&jk=eb038dd32447a1c7&sjdu=QwrRXKrqZ3CNX5W-O9jEvRFd8FQI4DEv5V74lSpSnHa_ovrhMHxyws68UyimQSIUzw-QYsQS-BUwPJYPhHWguw&tk=1ee81ru3r41si800&adid=344301318&pub=4a1b367933fd867b19b072952f68dceb&vjs=3)
 - [Edfinity - Full Stack](https://www.indeed.com/viewjob?cmp=Edfinity&t=Full+Stack+Engineer&jk=26ca731ce199d6f1&q=javascript+ruby+rails&vjs=3)
 
+<hr>
+
 
 You will reference this material again and again over the next few weeks. Focus
-on noting the differences between Ruby and JS. You should use this material as
-you would the [HyperPolyglot](http://hyperpolyglot.org/scripting) reference: not
+on noting the differences between Ruby and JS. You should use this material not
 as reading material, but as a handy place to define and experiment with the
 basics of Ruby.
 
@@ -42,22 +47,7 @@ _Before this lesson, students should:_
 - Be comfortable with Javascript
 - Have Ruby installed
 
-## Outline
 
-In order to accomplish our learning objectives, we've got quite a number of Ruby
-features to cover. These include:
-
-- Variable declaration and naming conventions.
-- Strings, interpolation, and concatenation.
-- Methods and functions, including predicates (a method/function that returns true/false)
-- Fixnums, Floats, and Numbers.
-- Falsiness.
-- Flow control.
-- Loops, ranges, and enumerable iteration.
-- Implicit and explicit returns.
-- Expression evaluation and conditional assignment.
-- Type coercion.
-- Logic, shortcut evaluation, and operator precedence.
 
 ## What is Ruby?
 
@@ -65,9 +55,12 @@ features to cover. These include:
 
 Ruby is object-oriented: every value is an object, including classes and instances of types that many other languages designate as primitives (such as integers, booleans, and "null"). Variables always hold references to objects. Every function is a method and methods are always called on an object.
 
-It is meant to be pretty, unobtrusive, and super readable.
 
-Ruby does **not** run in the browser. It is most commonly used for backend web development with frameworks like [Sinatra](http://www.sinatrarb.com/) and [Rails](http://rubyonrails.org/).
+<img src="https://i.imgur.com/4lVnGnF.png" />
+
+
+
+**NOTE:** Ruby does **not** run in the browser. It is most commonly used for backend web development with frameworks like [Sinatra](http://www.sinatrarb.com/) and [Rails](http://rubyonrails.org/).
 
 ## What's Ruby like?
 
@@ -88,33 +81,50 @@ While it isn't exactly simple, a lot of its features are going to feel intuitive
 
 ## Running Ruby
 
-Just run `ruby FILENAME.rb`. We can also run ruby commands from the terminal using repl's like [`pry`](http://pryrepl.org/) or [`irb`](https://www.tutorialspoint.com/ruby/interactive_ruby.htm), which is the official ruby repl but `pry` is much better
+Running ruby files are similar to using `node`.  Just run `ruby FILENAME.rb`. We can also run ruby commands from the terminal using repl's like [`pry`](http://pryrepl.org/) or [`irb`](https://www.tutorialspoint.com/ruby/interactive_ruby.htm), which is the official ruby repl but `pry` is much better
 
-## Foreword
 
-The depth and breadth of the [Ruby Core](https://ruby-doc.org/core-2.7.1/) and
-[Standard Library](https://ruby-doc.org/stdlib-2.7.1/) are so extensive that
-we'll always want to check them before building something ourselves. The
-official Ruby docs are our friends, and we should use them liberally. Over
-time, we'll learn to remember the more common methods, but even then it can be
-extremely useful to consult the documentation.
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 3min
+
+The official Ruby docs are our friends, and we should use them liberally. 
+
+Let's take a minute to look at the [Ruby Core](https://ruby-doc.org/core-2.7.1/) documentation.
+
+<hr>
+
 
 ## Creating and running a ruby file
 
-- Create a file called `ruby.rb`
-- Open this file in your text editor and write
+Create a file called `ruby.rb` and open the file in your text editor. 
+
+Add the following:
 
   ```ruby
+  # this is a single line comment
+  =begin
+  this is a
+  multileline 
+  comment 
+  =end
+
+
+  # this will output to the terminal the string 'hello world'
   puts("hello World")
   ```
 
-- Open your terminal and run your `ruby.rb` file by running `ruby ruby.rb`
+Open your terminal and run the file using: 
 
-You ran your first ruby file!
+```sh
+ruby ruby.rb
+```
 
-## Ruby :: Working with the terminal
+You ran your first ruby file and learned to use 2 of the most important helper tools at your disposal, comments and console logs. 
 
-## Logging in Ruby
+## Working with the terminal
+
+## (Console) Logging in Ruby
 
 The equivalent of `console.log()` in JS is `puts` in Ruby
 
@@ -122,25 +132,25 @@ The equivalent of `console.log()` in JS is `puts` in Ruby
 puts('hi')
 ```
 
-But one of the best parts about Ruby is that functions in ruby don't need parentheses...say what!!
+But one of the best parts about Ruby is that methods (functions in js) don't need parens
 
 ```ruby
 puts 'hi'
 ```
 
-### What is the difference between `puts` and `p`
+### What is the difference between `p`, `puts` and `print`
 
 What you will soon find out is that Ruby provides many methods that do essentially the same thing or just slightly different. That is true for `p` vs `puts` vs `print`
 
-- `p` calls `.inspect` on an element, which will display it with all its information including quotes, if it is a string.
+- `p` calls `.inspect` on an element, which will display it with all its information including quotes, if it is a string and includes a newline char `\n`
 - `puts` just prints the element (without extra information) and like `p`, includes a newline char `\n`
-- `print` also just prints, but does not include a newline char.
+- `print` - `puts` without a newline char.
 
-## Ruby :: Core Syntax, Variables, and Operators
+## Core Syntax, Variables, and Operators
 
 ### What is a variable in Ruby?
 
-A variable is an identifier that is assigned to an object, and which may hold a value. Ruby uses duck typing, which is a kind of dynamic typing. If a value behaves or acts like a certain type (duck), such as an integer, Ruby gives it a context and treats it as such (it’s probably a duck).
+A variable is an identifier that is assigned to an object, and which may hold a value. Ruby uses `duck typing`, which is a kind of dynamic typing. If a value behaves or acts like a certain type (duck), such as an integer, Ruby gives it a context and treats it as such (it’s probably a duck).
 
 #### Examples:
 
@@ -152,24 +162,30 @@ price   = 10.25 # => Float
 
 ### Casing
 
-- All variables and methods must use snake_case
-- All constants (besides classes and modules) must use SCREAMING_SNAKE_CASE
+All variables and methods must use `snake_case`
 
 
 ```ruby
 my_first_var = 'hello world'
 ```
 
+All constants (besides classes and modules) must use `SCREAMING_SNAKE_CASE`
+```ruby
+FOO_CONSTANT = "foo"
+```
+
 ### Variable Declaration
 
 Ruby handles variables differently than we've previously seen. In Ruby,
-variables can be simply defined, **without previously being declared.** This
+variables can be simply defined, **without previously being declared.** 
+
+This
 means that with Ruby, we don't need keywords like `let` and `const` before variables.
 We can simply declare the variable and assign it a value `variable = value`.
 
 ```ruby
-a = 1
-puts a
+color = 'green'
+puts color
 ```
 
 However, this only works if we assign the variable a value. Why? Because
@@ -201,12 +217,11 @@ With parallel assignment, you can assign several values to several variables in 
 
 ```ruby
 name, grade, gpa = 'Suresh', 89, 3.6
-a, b, c = "cash", 1.99, 100
 ```
 
 ### Numbers
 
-Numbers in Javascript compared to Ruby are very similar with some small
+Numbers in Javascript, compared to Ruby, are very similar with some small
 differences.
 
 In Javscript there was really only one official type of number, but in Ruby
@@ -214,15 +229,21 @@ there is a different type if a number is a whole _integer_ (no decimals) or
 a _float_ (contains decimals).
 
 - Integers: `1`, `23`, and `-10000`
-- Decimals: `3.14`, `-808.08` and `12.043e-04`
+- Decimals: `3.14` and `-808.08` 
 
 Numbers in Ruby are in the [`Numeric`](https://ruby-doc.org/core-2.5.1/Numeric.html) class. It's subclasses include [`Integer`](https://ruby-doc.org/core-2.5.1/Integer.html) and [`Float`](https://ruby-doc.org/core-2.5.1/Float.html)
 
+We can determine the `class` of a value by calling it's `.class` method.
+
 ```ruby
-1.class
+puts 1.class
  => Integer
-1.0.class
+puts 1.0.class
  => Float
+```
+
+We can also perform the same math as in JavaScript. 
+```ruby
 1+1
  => 2
 3-1
@@ -235,6 +256,13 @@ Numbers in Ruby are in the [`Numeric`](https://ruby-doc.org/core-2.5.1/Numeric.h
  => 0 # (rounds down)
 1 / 2.0
  => 0.5 # (does not round float)
+```
+
+Now the fun part. Ruby comes with so many methods that allow developers to be more efficient. 
+
+Here are a few exampless. 
+
+```ruby
 2.next
  => 3 # (.next provides the next integer value)
 2.pred
@@ -245,7 +273,8 @@ Numbers in Ruby are in the [`Numeric`](https://ruby-doc.org/core-2.5.1/Numeric.h
  => 1 # (.gcd provides the greatest common divisor of the integer to which the method is applied and the value passed)
 ```
 
-There are a number of methods available for the integer class, which you can play around with. Simply check them by using .methods on the integer.
+#### Methods
+There are a number of methods available for any class.  Let's take a look at the methods available for the integer class, 
 
 ```ruby
 2.methods
@@ -262,16 +291,19 @@ a = 1
 puts(a)
 ```
 
-The end of a line (almost always) marks the end of an expression; semicolons
-are only required if you have two distinct expressions on one line
-(e.g. `name = "Antony"; height_in_feet = 6`). The most likely place where you might
-spot a semicolon in Ruby is inside a `for` loop, and those (as you'll soon see) are
-used _very_ **infrequently** in Ruby.
+The end of a line (almost always) marks the end of an expression. Semicolons
+are only required if you have two distinct expressions on one line.
+
+```ruby
+name = "Antony"; height_in_feet = 6
+```
 
 ### Operators
 
-In Ruby, everything is an expression - a statement composed of a combination
-of operands (data) and operations. In JavaScript, things like `+` and `-` are
+In Ruby, everything is an expression - **a statement composed of a combination
+of operands (data) and operations**.  
+
+In JavaScript, things like `+` and `-` are
 _true operators_ - keywords built into the language itself, and imbued with
 fixed, unchangeable meanings.
 
@@ -308,10 +340,6 @@ Just like with JavaScript and other languages, you can combine assignment with m
 different operators like `*`, `-`, and even `||`.
 
 ```ruby
-
-counter ||= 0          # counter = counter || 0
-=> 0
-
 counter += 1           # counter = counter + 1
 => 1
 
@@ -322,19 +350,20 @@ counter -= 1           # counter = counter - 1
 => 4
 ```
 
-## Ruby :: Strings
-
-A string is a series of text characters. You can use strings to hold names, email addresses, phone numbers, and a million other things. Ruby’s strings are special because even very large strings are highly efficient to work with (this isn’t true in many other languages).
+## Strings
 
 The easiest way to specify a string is to surround it either with double quotes (") or single quotes ('). The two types of quotes work a little differently
 
 Single-quoted strings are referred to as
-_'string literals'_; they interpret their contents as a literal sequence
+`string literals`; they interpret their contents as a literal sequence
 of characters, with only two recognized escape sequences - `\'` and `\\`.
+
 In contrast, double-quoted strings (" ") support a much wider variety of escape
 characters, including `\n` (new line), `\t` (tab), and `\s` (space); if `\n`
 appeared in a single-quoted string, it would be interpreted as the
 character `\` followed by the character `\n`, rather than a new line.
+
+Here they are used to create the same output. 
 
 ```ruby
 'it\'s a great day' => "it's a great day"
@@ -342,7 +371,7 @@ character `\` followed by the character `\n`, rather than a new line.
 "it\'s a great day" => "it's a great day"
 ```
 
-But try using \n (new line) character and we are forced to use double quotes
+But try using `\n` (new line) character and we are forced to use double quotes
 
 ```ruby
 str = 'hello \n world'
@@ -363,16 +392,19 @@ world
 
 Strings in Ruby are derived from the String class, and there are over 100 methods to manipulate and operate on strings. This is perhaps because, in programming, a lot revolves around strings, and Ruby reduces the headache by managing a lot out of the box.
 
-To see all the methods that strings have in Ruby in your `ruby.rb` file, `put` a string
-followed by `.methods`, and run your file;
+As before we only need include `.method` to see all the methods. 
 
 ```ruby
-puts "Madeline".methods`
+puts "kenny".methods
 ```
 
-Alternatively, you can call
-`"some string".methods.sort` for a full list. And, of course, the Ruby documentation
-has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
+Alternatively, you can call the `.sort` method to see them sorted. 
+
+```ruby
+puts "some string".methods.sort
+```
+
+And, of course, the Ruby documentation has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 
 ### There are several methods for querying the length of a string:
 
@@ -380,36 +412,32 @@ has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
 s = "hello"
 s.length # => 5: counts characters in 1.9, bytes in 1.8
 s.size # => 5: size is a synonym
-s.bytesize # => 5: length in bytes; Ruby 1.9 only
+```
+
+#### Predicate Methods
+
+Some methods end in a `?` and are called `predicate methods`,  which is a fancy way of saying they return `true` or `false`.  
+
+```js
 s.empty? # => false
 "".empty? # => true
+
+s.start_with? "hell" # => true. Note singular "start" not "starts"
+s.end_with? "bells" # => false
+
+s.include?("ll") # => true: "hello" includes "ll"
+s.include?(?H) # => false: "hello" does not include character H
 ```
 
 ### Finding the position of a substring or pattern match
 
-- String methods for searching a string and for replacing content include the following:
+String methods for searching a string and for replacing content include the following:
 
 ```ruby
 s = "hello"
 s.index('l') # => 2: index of first l in string
 s.index('l',3) # => 3: index of first l in string at or after position 3
 s.index('Ruby') # => nil: search string not found
-s.rindex('l') # => 3: index of rightmost l in string
-s.rindex('l',2) # => 2: index of rightmost l in string at or before 2
-```
-
-### Checking for prefixes and suffixes
-
-```ruby
-s.start_with? "hell" # => true. Note singular "start" not "starts"
-s.end_with? "bells" # => false
-```
-
-### Testing for presence of substring using a predicate method(?)
-
-```ruby
-s.include?("ll") # => true: "hello" includes "ll"
-s.include?(?H) # => false: "hello" does not include character H
 ```
 
 ### Pattern matching with regular expressions
@@ -424,16 +452,6 @@ s.match(/[aeiou]/) {|m| m.to_s} # => "e": return first vowel
 ```ruby
 "this is it".split # => ["this", "is", "it"]: split on spaces by default
 "hello".split('l') # => ["he", "", "o"]
-```
-
-### Split a string into two parts plus a delimiter
-
-- These methods always return arrays of 3 strings:
-
-```ruby
-"banana".partition("an") # => ["b", "an", "ana"]
-"banana".rpartition("an") # => ["ban", "an", "a"]: start from right
-"a123b".partition(/\d+/) # => ["a", "123", "b"]: works with Regexps, too
 ```
 
 ### Some additional useful string methods
@@ -468,6 +486,7 @@ You can also concatenate strings but this is NOT recommend
 
 Above we see that we can NOT implicitly convert a non-string into a string (unlike what we have seen in JS).
 
+#### Conversion Methods
 String objects come with several conversion methods that all start `to_` and
 then a letter or abbreviation hinting as to what conversion they perform.
 
@@ -533,7 +552,7 @@ So unlike JS `0` and `''` are truthy. (There is no `null`, `undefined`, `NaN`, `
 !! '' # => true
 ```
 
-## Ruby :: Flow Control
+## Flow Control
 
 <!-- <img src="https://i.giphy.com/media/h8y265b9iKtzKT0pDj/giphy.webp" width="600px"> -->
 
@@ -552,8 +571,12 @@ else
 end
 ```
 
-A Ruby `if` looks quite similar to a JavaScript `if`. Some of the major
-differences are:
+<hr>
+:question: From your previous knowledge of JS what stands out as being different in Ruby vs a JS if/else statement? 
+
+<hr>
+
+<details><summary>Differences</summary>
 
 - In Ruby, we use `elsif`, not `else if`.
 
@@ -566,37 +589,7 @@ differences are:
   keyword in Ruby, appearing at the end of pretty much any contiguous section of
   code.
 
-Another options to use for a conditional is `unless` which can replace `if` with a negated test and no `elsif` or `else`.
-
-```ruby
-if !(name == "Jason")
-  puts "Not Jason!"
-end
-```
-
-becomes
-
-```ruby
-unless name == "Jason"
-  puts "Not Jason!"
-end
-```
-
-We also have single-line ifs
-
-```ruby
-puts 'you are wise!' if age >= 100
-```
-
-You may even see `unless`
-
-```ruby
-puts 'you are wise!' unless age < 100
-```
-When you see an `unless foo`, read it as `if !foo`
-
-> `if !foo` can always be written as `unless foo` which creates a more readable line
-
+</details>
 
 #### Ternary operator  
 
@@ -655,7 +648,25 @@ end
 
 > Yes there _are_ `for` loops in Ruby but we DO NOT use them
 
-## Ruby :: Methods
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity  - Algo: Reverse A String Of Text - 25min
+
+Since you are now well versed in using string methods, conditionals and loops in Ruby it's time to put those skills to the test.  
+
+Open and fork the following [repl](https://repl.it/@jkeohan/Ruby-Reverse-A-String-Of-Text-Starter#main.rb) and following the instruction to reverse a string of text. 
+
+<!-- <details><summary>Solution</summary>
+
+https://repl.it/@jkeohan/Ruby-Reverse-A-String-Solution-SEIR526#main.rb
+
+</details> -->
+
+
+
+<hr>
+
+## Methods
 
 Ruby draws no distinction between functions that are properties of objects and
 functions that aren't; in Ruby, all of them are called 'methods'.
@@ -702,55 +713,6 @@ string
 => "HELLO"
 ```
 
-### Lab: FizzBuzz
-
-Create a new file called `fizzbuzz.rb`.
-
-In pairs, you're going to write a method that will solve "FizzBuzz"
-
-method called
-`fizzbuzz`; this method should accept an argument, `max_num`.
-
-Essentially, your program should print out all of
-the numbers from 1 up to `max_num`, which is a variable to which you can assign
-an arbitrary (positive, integer) value. However, if a number is divisible by
-3, instead of printing the number, your program should print the word "fizz";
-for numbers divisible by 5, it should print "buzz"; for numbers divisible by
-both 3 **and** five, it should print "fizzbuzz".
-
-For example:
-
-```ruby
-max_num = 16
-
-## what should print to the console
-
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz
-16
-```
-
-To run your code, simply navigate to the root of this repository and run
-`ruby fizzbuzz.rb`
-
-> Running a script in this way should seem familiar, since it's exactly what we
-> were doing with `node`. It's a deliberate similarity - Node was
-> modeled off of other console-based runtime environments, as a way of giving
-> JavaScript a solid platform for running on the server side.
-
 ## Common Gotchas When Learning Ruby After JavaScript
 
 ### == vs ====
@@ -759,6 +721,7 @@ To run your code, simply navigate to the root of this repository and run
 JavaScript, `===` is a 'strict equality' comparator, while `==` is a
 'loose equality' comparator; since `==` has some weird exceptions, the
 convention is to almost always use `===`.
+
 **In Ruby, however, the reverse is true; you should `==` to test for equality,
 and _not_ use `===`**
 
@@ -770,6 +733,27 @@ Range === (1..2)   # Output: => true
 Array === [1,2,3]   # Output: => true
 Integer === 2   # Output: => true
 ```
+
+This is similar to using the `instanceof` in JavaScript
+
+```js
+new Number(2) instanceof Number // Output => true
+```
+
+<hr>
+
+Per [StackOverflow](https://stackoverflow.com/questions/3422223/vs-in-ruby)
+
+The two really have nothing to do with each other. In particular, #== is the equality operator and #=== has absolutely nothing to with equality. Personally, I find it rather unfortunate that #=== looks so similar to #==, uses the equals sign and is often called the case equality operator, triple equals operator or threequals operator when it really has nothing to do with equality.
+
+I call #=== the case subsumption operator (it's the best I could come up with, I'm open to suggestions, especially from native English speakers).
+
+The best way to describe a === b is "if I have a drawer labeled a, does it make sense to put b in it?"
+
+So, for example, Module#=== tests whether b.is_a?(a). If you have Integer === 2, does it make sense to put 2 in a box labeled Integer? Yes, it does. What about Integer === 'hello'? Obviously not.
+
+<hr>
+
 
 ### .equal?
 
@@ -817,6 +801,77 @@ b.object_id  # Output :=> 19972120
 
 - Ruby doesn't implicitly convert numbers to strings.
 
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity  - Algo: FizzBuzz - 25min
+
+Fork this reply: [Ruby - FizzBuzz - Starter](https://repl.it/@jkeohan/Ruby-FizzBuzz-Starter#main.rb)
+
+In pairs, you're going to write a method called `fizz_buzz` that accept a single argument called `max_num`.
+
+Essentially, your program should print out all of
+the numbers from 1 up to `max_num`, which is a variable to which you can assign
+an arbitrary (positive, integer) value. 
+
+However, if a number is divisible by
+3, instead of printing the number, your program should print the word `fizz`;
+for numbers divisible by 5, it should print `buzz`; for numbers divisible by
+both 3 **and** 5, it should print `fizzbuzz`.
+
+Here is the output:
+
+```ruby
+max_num = 35
+
+## what should print to the console
+
+fizzbuzz
+1
+2
+fizz
+4
+buzz
+fizz
+7
+8
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+16
+17
+fizz
+19
+buzz
+fizz
+22
+23
+fizz
+buzz
+26
+fizz
+28
+29
+fizzbuzz
+31
+32
+fizz
+34
+```
+
+To run your code, simply navigate to the root of this repository and run
+`ruby fizzbuzz.rb`
+
+> Running a script in this way should seem familiar, since it's exactly what we
+> were doing with `node`. It's a deliberate similarity - Node was
+> modeled off of other console-based runtime environments, as a way of giving
+> JavaScript a solid platform for running on the server side.
+
+
+
 ## Additional Resources
 
 - [Links to a variety of offical language and api documentation](https://www.ruby-lang.org/en/documentation/)
@@ -827,8 +882,3 @@ b.object_id  # Output :=> 19972120
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
 
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-   alternative licensing, please contact legal@ga.co.
