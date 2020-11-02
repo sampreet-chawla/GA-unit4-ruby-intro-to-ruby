@@ -330,7 +330,7 @@ priced_apartment[:rent] += 150
 
 In `my_pet` create a `:fav_food` key and set it's value to an empty array. Add a few fav foods to the array as objects that include both `:name` and `:cost` keys.
 
-### Demo: Hash Keys
+### Hash Keys
 
 To get an Array of the keys that have been set in a hash, use `Hash#keys`.
 
@@ -339,7 +339,7 @@ priced_apartment.keys
 # => [:address, :bedrooms, :occupants, :rent]
 ```
 
-### Demo: Hash as Final Argument to Method
+### Hash as Final Argument to Method
 
 If the last argument to a method is a hash, you may omit the curly braces.
 
