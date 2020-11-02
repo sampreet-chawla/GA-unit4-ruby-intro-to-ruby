@@ -107,14 +107,15 @@ Add the following:
 
   ```ruby
   # this is a single line comment
+
   =begin
-  this is a
-  multileline 
-  comment 
+  this is a multileline comment 
+  additional comment text
+  and more comment text
   =end
 
 
-  # this will output to the terminal the string 'hello world'
+  # this will console log to the terminal the string 'hello world'
   puts("hello World")
   ```
 
@@ -124,7 +125,7 @@ Open your terminal and run the file using:
 ruby ruby.rb
 ```
 
-You ran your first ruby file and learned to use 2 of the most important helper tools at your disposal, comments and console logs. 
+You ran your first ruby file and learned to use 2 of the most important helper tools at your disposal, `comments` and `console logs. 
 
 ## Working with the terminal
 
