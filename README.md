@@ -28,6 +28,8 @@ And a few of the most popular web sites that are built in Ruby/Rails
 
 - [top-10-famous-sites-built-with-ruby-on-rails](https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails)
 
+**Side Note:** You can use [https://builtwith.com/](https://builtwith.com/) to examine what tech was used to create a web site. 
+
 <hr>
 
 
