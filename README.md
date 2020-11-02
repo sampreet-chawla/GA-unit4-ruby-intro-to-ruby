@@ -17,20 +17,19 @@ goal of utilizing the foundation we've already built.
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 3min
 
 
-Although we are about to make the switch and learn Ruby much of being full stack web developer requires that you continue to develop for the front end which involves JavaScript. 
+Although we are about to make the switch and learn Ruby and Rails, much of being full stack web developer requires that you continue to develop for the front end which may include React but most certainly involves JavaScript. 
 
 Let's take a look at a few jobs that require both Ruby/Rails & JavaScript:
 
 - [Big Marker.com - Software Engineer](https://www.indeed.com/viewjob?cmp=BigMarker.com&t=Software+Engineer&jk=eb038dd32447a1c7&sjdu=QwrRXKrqZ3CNX5W-O9jEvRFd8FQI4DEv5V74lSpSnHa_ovrhMHxyws68UyimQSIUzw-QYsQS-BUwPJYPhHWguw&tk=1ee81ru3r41si800&adid=344301318&pub=4a1b367933fd867b19b072952f68dceb&vjs=3)
 - [Edfinity - Full Stack](https://www.indeed.com/viewjob?cmp=Edfinity&t=Full+Stack+Engineer&jk=26ca731ce199d6f1&q=javascript+ruby+rails&vjs=3)
 
+And a few of the most popular web sites that are built in Ruby/Rails
+
+- [top-10-famous-sites-built-with-ruby-on-rails](https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails)
+
 <hr>
 
-
-You will reference this material again and again over the next few weeks. Focus
-on noting the differences between Ruby and JS. You should use this material not
-as reading material, but as a handy place to define and experiment with the
-basics of Ruby.
 
 ## Objectives
 
@@ -64,14 +63,12 @@ Ruby is object-oriented: every value is an object, including classes and instanc
 
 ## What's Ruby like?
 
-### M.I.N.A.S.W.A.N.
+### M.I.N.A.S.W.A.N. - Matz Is Nice And So We Are Nice
 
-- "Matz Is Nice And So We Are Nice"
-- Mentality not only applies to how you should treat your fellow developers, but also the philosophy behind Ruby itself.
-- Yukihiro Matsumoto ("Matz") created Ruby to increase developer happiness.
-  He developed Ruby throughout the 90's and has continued to work on the language since. He is now the Chief architect of Ruby at Heroku.
 
-> "Programmers often feel joy when they can concentrate on the creative side of programming, so Ruby is designed to make programmers happy." — Yukihiro "Matz" Matsumoto ![](https://www.azquotes.com/picture-quotes/quote-i-believe-that-the-purpose-of-life-is-at-least-in-part-to-be-happy-based-on-this-belief-yukihiro-matsumoto-102-79-90.jpg)
+> "Programmers often feel joy when they can concentrate on the creative side of programming, so Ruby is designed to make programmers happy." — Yukihiro "Matz" Matsumoto 
+
+<img src="https://www.azquotes.com/picture-quotes/quote-i-believe-that-the-purpose-of-life-is-at-least-in-part-to-be-happy-based-on-this-belief-yukihiro-matsumoto-102-79-90.jpg" />
 
 ### A **Natural** Language
 
@@ -81,7 +78,11 @@ While it isn't exactly simple, a lot of its features are going to feel intuitive
 
 ## Running Ruby
 
-Running ruby files are similar to using `node`.  Just run `ruby FILENAME.rb`. We can also run ruby commands from the terminal using repl's like [`pry`](http://pryrepl.org/) or [`irb`](https://www.tutorialspoint.com/ruby/interactive_ruby.htm), which is the official ruby repl but `pry` is much better
+Running ruby files are similar to using `node`.  Just run `ruby FILENAME.rb`. 
+
+We can also run ruby commands from the terminal using repl's like [`pry`](http://pryrepl.org/) or [`irb`](https://www.tutorialspoint.com/ruby/interactive_ruby.htm), which is the official ruby repl but `pry` is much a better tool. 
+
+For the sake of recording all of the command and additional notes we will be using `.rb` files and not `pry` or `irb`. 
 
 
 <hr>
@@ -94,6 +95,9 @@ Let's take a minute to look at the [Ruby Core](https://ruby-doc.org/core-2.7.1/)
 
 <hr>
 
+
+**Note:** You will reference this material again and again over the next few weeks. Focus
+on noting the differences between Ruby and JS. 
 
 ## Creating and running a ruby file
 
@@ -881,4 +885,3 @@ To run your code, simply navigate to the root of this repository and run
 - [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
-
