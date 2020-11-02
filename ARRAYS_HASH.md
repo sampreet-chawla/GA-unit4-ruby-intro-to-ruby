@@ -4,26 +4,24 @@
 
 <br>
 
-## Ruby :: Collections
+## Collections
 
 ### Arrays
 
 
-In Ruby, "Arrays are ordered, integer-indexed collections of any object." From
+In Ruby, `Arrays are ordered, integer-indexed collections of any object.` From
 that, [Ruby Arrays](https://ruby-doc.org/core-2.6.3/Array.html) seem a lot like
 JavaScript Arrays.
 
-But there are some important differences.
-
 
 ```ruby
-
+# create an array
 my_array = ["a","b","c"]
 => ["a","b","c"]
-
+# return the first element in the array
 my_array[0]
 => "a"
-
+# set the value at a position
 my_array[2] = "z"
 => "z"
 
@@ -46,14 +44,11 @@ developers = []
 # => []
 ```
 
-With the literal syntax, we can create an array with initial values.
+With the literal syntax, we can create an array with values we wish
 
 ```rb
 not_the_same_type = [[], 'one', 2.0, 3]
 # => [[], "one", 2.0, 3]
-
-developers = ['Caleb', 'Joel', 'Julia', 'Adam']
-# => ["Caleb", "Joel", "Julia", "Adam"]
 ```
 
 If all of the entries are strings, Ruby provides a (Perl inspired) string
@@ -61,13 +56,13 @@ If all of the entries are strings, Ruby provides a (Perl inspired) string
 mechanism to create an Array:
 
 ```rb
+developers = ['Caleb', 'Joel', 'Julia', 'Adam']
+# => ["Caleb", "Joel", "Julia", "Adam"]
+
+# string quoting
 developers = %w[Caleb Joel Julia Adam]
 # => ["Caleb", "Joel", "Julia", "Adam"]
 ```
-
-How does this compare with
-[creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-JavaScript Arrays?
 
 ## Assigning and accessing elements in a Ruby Array
 
@@ -85,16 +80,17 @@ specific index in an array:
 developers[0] # Accessing first element by at index 
 # => "Caleb"
 
-arr.first # Accessing the first ellement using method
+developers.first # Accessing the first element using method
 # => "Caleb"
 
 developers[-1] # Accessing the last element using -1
 # => "Adam"
 
-arr.last # Accessing the last ellement using method
-# => "Caleb"
+developers.last # Accessing the last element using method
+# => "Adam"
 
 developers[developers.length-1] # And yet again the last element
+# => "Adam"
 
 developers[-5] #No element exists at that position
 # => nil
@@ -168,11 +164,10 @@ developers.unshift 'Guillermo'
 
 ### Hashes
 
-In Ruby, "A Hash is a dictionary-like collection of unique keys and their
-values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.5.0/Hash.html)
+In Ruby, `A Hash is a dictionary-like collection of unique keys and their
+values`. In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.5.0/Hash.html)
 are not the most general object in the language, but are instances of a
 specialized class for key/value storage.
-
 
 
 A Ruby hash acts somewhat like a dictionary (or object) in JavaScript, in
@@ -183,18 +178,20 @@ that it consists of pairs of keys and values.
 dict = {}
 => {}
 
-dict["a"] = 23
-=> 23
+dict["a"] = 1
+=> 1
 
 dict["a"]
-=> 23
+=> 1
 ```
 
-However, there are a couple of important differences. For instance, Ruby
+However, there are a couple of important differences. 
+
+For instance, Ruby
 hashes do not allow you to access their keys through a dot notation; you
 *must* use square braces. When you use a `.`, ruby thinks you are calling a method on an object.
 
-We can also define a hash with keys and values already in it:
+We can also define a hash with keys and values already in it using a `=>` hash rocket. 
 
 ```ruby
 nums = {
@@ -207,6 +204,7 @@ In the example above, our hash has the keys `"odds"` and `"evens"` in quotes,
 which map to values `[1, 3, 5]` and `[2, 4, 6]` respectively. We use the
 hash rocket symbol here (or Fat Arrow) to link our keys to their values.
 
+#### Symbols
 Ruby has another way to define keys and values in hash:
 
 ```ruby
@@ -233,7 +231,7 @@ When in doubt, log it out!
 ## Ruby Symbols
 
 A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of
-characters that is stored, at most, once in any instance of the Ruby interpreter.
+characters that is stored, at most, once in any instance of the Ruby interpreter.  JavaScript also introduced `Symbols` in ES6. 
 
 In Ruby, strings are compared a character at a time, but symbols are compared
 by `object_id`.  This makes comparing symbols fast and therefore much more
@@ -244,21 +242,26 @@ performant than strings when used as keys in a `Hash`.
 Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 
 ```rb
+# check to see if both bobs are stored at the same location in memory
 'bob'.equal? 'bob'
 # => false
-
+# comparing just the values
 'bob' == 'bob'
 # => true
 
+# check to see if both bobs are stored at the same location in memory
 'bob'.object_id == 'bob'.object_id
 # => false
 
+# check to see if both bobs are stored at the same location in memory
 :bob.equal? :bob
 # => true
 
+# check to see if both symbols are the same
 :bob == :bob
 # => true
 
+# check to see if both bobs are stored at the same location in memory
 :bob.object_id == :bob.object_id
 # => true
 ```
@@ -380,5 +383,3 @@ I should look like the following:
 - [Object Passing in Ruby - Pass by Reference or Pass by Value](https://launchschool.com/blog/object-passing-in-ruby)
 - [What's the difference between equal?, eql?, ===, and ==?](https://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and)
 - [Ruby Koans](https://rubykoans.com/)
-
-

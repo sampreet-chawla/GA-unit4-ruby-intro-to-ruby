@@ -131,17 +131,22 @@ You ran your first ruby file and learned to use 2 of the most important helper t
 
 ## (Console) Logging in Ruby
 
-The equivalent of `console.log()` in JS is `puts` in Ruby
+Let's talk about console logging a bit more. The equivalent of `console.log()` in JS is `puts` in Ruby. 
 
 ```ruby
 puts('hi')
 ```
 
-But one of the best parts about Ruby is that methods (functions in js) don't need parens
+But one of the best parts about Ruby is that methods (functions in js) don't need params.
 
 ```ruby
 puts 'hi'
 ```
+
+As with almost all things Ruby, there are multiple methods to console log such as: 
+- puts (which you've just learned)
+- print
+- p
 
 ### What is the difference between `p`, `puts` and `print`
 
@@ -155,7 +160,8 @@ What you will soon find out is that Ruby provides many methods that do essential
 
 ### What is a variable in Ruby?
 
-A variable is an identifier that is assigned to an object, and which may hold a value. Ruby uses `duck typing`, which is a kind of dynamic typing. If a value behaves or acts like a certain type (duck), such as an integer, Ruby gives it a context and treats it as such (it’s probably a duck).
+A variable is an identifier that is assigned to an `OBJECT`, as all things in ruby are `OBJECTS`,  and which may hold a value. 
+
 
 #### Examples:
 
@@ -406,10 +412,10 @@ puts "kenny".methods
 Alternatively, you can call the `.sort` method to see them sorted. 
 
 ```ruby
-puts "some string".methods.sort
+puts "kenny".methods.sort
 ```
 
-And, of course, the Ruby documentation has [a full list](https://ruby-doc.org/core-2.6.3/String.html) as well.
+And, of course, the Ruby documentation has [a full list](https://ruby-doc.org/core-2.6.3/String.html) f methods as well.
 
 ### There are several methods for querying the length of a string:
 
